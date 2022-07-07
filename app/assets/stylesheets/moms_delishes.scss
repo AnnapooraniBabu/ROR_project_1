@@ -4,6 +4,7 @@
 body{
     background-color: #FFFFFF;
     position: relative;
+
 }
 
 
@@ -17,9 +18,10 @@ body{
     
 }
 .nav li{
-    // padding-left: 10px;
     margin-left: 10%;
-    text-decoration:underline;
+    text-decoration: none;
+   
+    
 }
 .content{
     font-weight: 600;
@@ -46,7 +48,6 @@ body{
     margin-top: 40%;
     margin-left: -0.5%;
     margin-right: -0.2%;
-    // margin-bottom: 10%;
     position: absolute;
 }
 .footer p{
@@ -54,4 +55,20 @@ body{
     font-size: 25px;
     font-family: 'Times New Roman', Times, serif;
     font-weight: 700;
+}
+.mom{
+    margin-left: 45%;
+    // margin-top: 3%;
+    width: 50%;
+    position: absolute;
+}
+.user{
+    position: absolute;
+    width: 4%;
+  
+}
+.home{
+    text-decoration: none;
+   
+    // text-decoration:underline;
 }
