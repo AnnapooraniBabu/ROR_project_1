@@ -3,11 +3,10 @@
 // You can use Sass (SCSS) here: https://sass-lang.com/
 body{
     background-color: #FFFFFF;
+    position: relative;
 }
 
-.nav{
-    // background-color: ;
-}
+
 .nav {
     position: relative;
     color: black;
@@ -20,6 +19,24 @@ body{
 .nav li{
     // padding-left: 10px;
     margin-left: 10%;
+    text-decoration:underline;
+}
+.content{
+    font-weight: 600;
+    font-size:60px;
+    margin-left: 10%;
+    margin-top: 8%;
+    line-height: 1.4em;
+    position: absolute;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+.tagline{
+    margin-left: 10%;
+    margin-top: 27%; 
+    font-size: 28px;
+    color: #F47C7C;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    position: absolute;
 }
 .footer{
     background-color: darkgray;
