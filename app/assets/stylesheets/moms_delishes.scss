@@ -4,6 +4,7 @@
 body{
     background-color: #FFFFFF;
     position: relative;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 
 }
 
@@ -35,10 +36,23 @@ body{
 .tagline{
     margin-left: 10%;
     margin-top: 27%; 
-    font-size: 28px;
-    color: #F47C7C;
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 25px;
+    color: #4B5D67;
+    // font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     position: absolute;
+}
+.btn{
+    position: absolute;
+    margin-top: 30%;
+    margin-left: 18%;
+    font-size: 20px;
+    padding: 20px;
+    background-color: #F47C7C;
+    width: 10%;
+    // border: none;
+    border-radius: 25px;
+    font-weight: 600;
+    color: #FFFFFF;
 }
 .footer{
     background-color: darkgray;
@@ -68,7 +82,11 @@ body{
   
 }
 .home{
+    color: #F47C7C;
     text-decoration: none;
+}
+.about{
+    text-decoration: none;
+   color: black;
    
-    // text-decoration:underline;
 }
