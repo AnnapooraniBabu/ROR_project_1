@@ -1,0 +1,6 @@
+<h1>Users#login</h1>
+<p>Find me in app/views/users/login.html.erb</p>
+<%= form_tag(posts_path, :method => "get", id: "search-form", class: "nav-search-wrapper") do %>
+    <%= text_field_tag :search, params[:search], placeholder: "Search" %>
+    <%= submit_tag "Search", :name => nil %>
+<% end %>
