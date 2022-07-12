@@ -246,11 +246,48 @@ footer img{
 }
 #login{
     width: 60%;
-    height: 60vh;
+    height: 80vh;
     // background-color: #4B5D67;
     margin-left: 20%;
-    margin-top: 10%;
+    margin-top: 5%;
     border-radius: 25px;
     box-shadow: 10px 10px 15px #F47C7C;
-    border: 10px solid #F47C7C;
+    border: 6px solid #F47C7C;
+}
+.log_img{
+    position: absolute;
+    background-color:#4B5D67;
+    width: 30%;
+    height: 80vh;
+}
+.log_con{
+    position: absolute;
+    // background-color: #EF9F9F;
+    width: 30%;
+    height: 80vh;
+    margin-left: 30%;
+}
+.log_con div{
+    margin-top: 20%;
+    position: absolute;
+    margin-left: 15%;
+    margin-top: 40%;
+    // background-color: blue;
+    width: 60%;
+    height: 40vh;
+    
+}
+input{
+    display: flex;
+    padding: 3%;
+    margin-top: 15%;
+    font-size: 20px;
+    background:transparent;
+    border: 0;
+    border-bottom: 2px solid lightgrey;
+    outline: none;
+   
+}
+.loginBtn{
+padding: 5%;
 }
