@@ -85,13 +85,15 @@
 
 <div id="login">
     <div class="log_img">
-
+         <%= image_tag 'cancel.png' , alt: 'speech-bubble', class: 'cross' %>
+         <%= image_tag 'india.png' , alt: 'speech-bubble', class: 'back_img' %>
     </div>
     <div class="log_con">
         <div>
             <input type="email" name="email" placeholder="Email Address">
             <input type="password" name="password" placeholder="Password">
             <a href=""><p>Forgot password?</p></a>
+             <a href=""><p>Already an user</p></a>
             <button type="submit" class="loginBtn">Login</button>
         </div>
         
