@@ -1,6 +1,17 @@
-<h1>Users#login</h1>
-<p>Find me in app/views/users/login.html.erb</p>
-<%= form_tag(posts_path, :method => "get", id: "search-form", class: "nav-search-wrapper") do %>
-    <%= text_field_tag :search, params[:search], placeholder: "Search" %>
-    <%= submit_tag "Search", :name => nil %>
-<% end %>
+<div id="login">
+    <div class="log_img">
+         <a href="" onclick="cancel()">
+            <%= image_tag 'cancel.png' , alt: 'speech-bubble', class: 'cross'  %></a>
+         <%= image_tag 'india.png' , alt: 'speech-bubble', class: 'back_img' %>
+    </div>
+    <div class="log_con">
+        <div>
+            <input type="email" name="email" placeholder="Email Address" required autofocus>
+            <input type="password" name="password" placeholder="Password" required>
+            <a href=""><p>Forgot password?</p></a>
+             <a href=""><p>Already an user</p></a>
+            <button type="submit" class="loginBtn">Login</button>
+        </div>
+        
+    </div>
+</div>

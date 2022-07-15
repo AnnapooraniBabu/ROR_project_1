@@ -8,7 +8,6 @@ body{
 
 }
 
-
 .nav {
     position: relative;
     color: black;
@@ -247,12 +246,15 @@ footer img{
 #login{
     width: 60%;
     height: 80vh;
-    // background-color: #4B5D67;
+    background-color: #FFFFFF;
     margin-left: 20%;
-    margin-top: 5%;
+    margin-top: -50px;
+    display: none;
     border-radius: 25px;
     box-shadow: 10px 10px 15px #F47C7C;
     border: 2px solid #F47C7C;
+    position: absolute;
+    top: 0%;
 }
 .log_img{
     position: absolute;

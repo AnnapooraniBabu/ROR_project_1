@@ -1,10 +1,5 @@
-<!-- <%# <h1>MomsDelishes#index</h1>
-<p>Find me in app/views/moms_delishes/index.html.erb</p> %>
-<%# <h1>Helllo</h1> %>
+<div id="whole_div">
 
-<%# <div class="footer">
-<p>I did this project - Annapoorani</p>
-</div> %>
     <link rel="icon" type="image/x-icon" href="./assets/images/snacks1.jpeg">
     <link href='https://fonts.googleapis.com/css?family=Aclonica' rel='stylesheet'>
 <%# <img src="./app/assets/images/snacks1.jpeg" alt="bg"> %>
@@ -12,7 +7,7 @@
 <ul class="nav">
     <li><a href="Index.html" class="home">Home</a></li>
     <li><a href="Index.html" class="about">About us</a></li>
-    <li><a href="Index.html" class="about">Login</a></li>
+    <li><a href="" id="log" class="about" onclick="show_login()">Login</a></li>
     <%# <li><a href="Index.html"><%= image_tag 'user_icon.png', alt: 'user', class:'user'</a></li>  %>
 </ul>
 
@@ -81,21 +76,18 @@
 </div>
 
 <%# <%= <img src="./assets/images/" alt=""  %>
-</footer> -->
-
-<div id="login">
-    <div class="log_img">
-         <%= image_tag 'cancel.png' , alt: 'speech-bubble', class: 'cross' %>
-         <%= image_tag 'india.png' , alt: 'speech-bubble', class: 'back_img' %>
-    </div>
-    <div class="log_con">
-        <div>
-            <input type="email" name="email" placeholder="Email Address">
-            <input type="password" name="password" placeholder="Password">
-            <a href=""><p>Forgot password?</p></a>
-             <a href=""><p>Already an user</p></a>
-            <button type="submit" class="loginBtn">Login</button>
-        </div>
-        
-    </div>
+</footer>
 </div>
+
+
+<!-- <script>
+    function show_login(){
+        document.getElementById("whole_div").style.display="none";
+        document.getElementById("login").style.display="";
+    }
+
+    // function cancel(){
+    //     document.getElementById("whole_div").style.display="";
+    //     document.getElementById("login").style.display="none";
+    // }
+</script> -->
