@@ -9,9 +9,10 @@ class MomsDelishesController < ApplicationController
   def create
     @register = Register.new(register_params)
     if @register.save
+      flash[:notice]= "User Created!"
       redirect_to root_path
     else
-    render plain: 'Failed to create account '
+    render plain: 'Failed to create account!'
     end
   end
   def register_params
