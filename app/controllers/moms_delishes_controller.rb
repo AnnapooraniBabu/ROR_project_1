@@ -18,4 +18,8 @@ class MomsDelishesController < ApplicationController
     params.require(:register).permit(:name, :email, :password_digest, :number)
     # params.require(:todo).permit(:task,:date_task)
   end
+  # def check_user
+  #   @user = Register.all
+  #   print @user
+  # end
 end
