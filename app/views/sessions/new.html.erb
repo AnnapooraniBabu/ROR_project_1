@@ -1,0 +1,38 @@
+<div id="login_div">
+    
+    <div class="log_img">
+         <a href="" onclick="cancel()">
+            <%= image_tag 'cancel.png' , alt: 'speech-bubble', class: 'cross'  %></a>
+         <%= image_tag 'india.png' , alt: 'speech-bubble', class: 'back_img' %>
+    </div>
+    <div class="log_con">
+        <p class="log_p">Login </p>
+        <p class="tag">Quickly login to taste the food ...</p>
+        <div>
+        
+            <%= form_with url: '/login' do |form|%>
+            <% if flash.any? %>
+            <% flash.each do |type, msg| %>
+            <div>
+            <%= msg %>
+            </div>
+            <% end %>
+            <% end %>
+              <%= form.email_field "user[email]", id: "email", placeholder: "Email address",class: "input" ,:required => true  %>
+              <%= form.password_field "user[password]", id: "password", placeholder: "Password",class: "input" ,:required => true  %>
+			  <!-- <%= form.submit "Login", class:"loginBtn" %> -->
+              <button type="submit" class="loginBtn">Log In</button>
+			<% end %>
+            
+            
+            <%# <input type="email" name="email" placeholder="Email Address" required autofocus>
+            <input type="password" name="password" placeholder="Password" required> %>
+            <a href=""><p class="con_ptag">Forgot password?</p></a>
+             <a href="/users/new" class="con_ptag"><p>Create an account</p></a>
+            <%# <button type="submit" class="loginBtn">Login</button> %>
+        </div>
+        
+    </div>
+</div>
+
+

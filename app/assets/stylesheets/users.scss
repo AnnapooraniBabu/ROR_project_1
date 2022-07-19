@@ -1,65 +1,66 @@
-// Place all the styles related to the users controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: https://sass-lang.com/
-#login_div{
+#register{
     width: 60%;
     height: 80vh;
-    background-color: #FFFFFF;
+    // background-color: #4B5D67;
     margin-left: 20%;
     margin-top: 5%;
-    // display: none;
     border-radius: 25px;
     box-shadow: 10px 10px 15px #F47C7C;
-    border: 2px solid #F47C7C;
-    // position: absolute;
-    top: 0%;
-}
-.log_p{
-    position: absolute;
-    font-size: 35px;
-    margin-top: 25%;
-    left: 15%;
-    font-weight: 800;
-}
-.tag{
-    position: absolute;
-    margin-top: 35%;
-    left: 15%;
+    border: 2px solid #FAD4D4;
+    // position: relative;
 }
 .log_img{
-    position: absolute;
+    position:absolute;
     // background-color:#4B5D67;
     width: 30%;
     height: 80vh;
 }
 .log_con{
-    position: absolute;
-    // background-color: #EF9F9F;
-    width: 30%;
+    // position:absolute;
+    background-color: #FAD4D4;
+    width: 35%;
     height: 80vh;
-    margin-left: 30%;
+    margin-left: 25%;
+    border-top-left-radius: 40px;
+    border-bottom-left-radius: 40px;
+    border-top-right-radius: 25px;
+    border-bottom-right-radius: 25px;
 }
-.log_con div{
-    margin-top: 20%;
+.container{
+   
     position: absolute;
     margin-left: 15%;
-    margin-top: 40%;
-    // background-color: blue;
+    top: -12%;
+//  margin-top: -1%;
+// background-color: blue;
     width: 70%;
     height: 40vh;
     
 }
-.con_ptag{
-    display: inline-flex;
-    margin-left: 10%;
-    margin-top: 15%;
+.con_g{
     // position: absolute;
+    // width: 50%;
+    // height: 5%;
+    display: inline;
+    // top: -55%;
+    background-color: aquamarine;
 }
-.back_img{
+.container div img{
     position: absolute;
+    width: 15%;
+}
+// .log_con p{
+//     display: inline-flex;
+//     margin-left: 5%;
+//     // margin-top: 15%;
+//     // position: absolute;
+// }
+.back_img{
+    position: relative;
     margin-top: 20%;
-    width: 100%;
-    margin-left: 10%;
+    width: 80%;
+    // margin-left: 10%;
+    left: -10% ;
 
 }
 .cross{
@@ -68,27 +69,43 @@
     margin-left: 4%;
     margin-top: 4%;
 }
-input{
+
+.input{
     display: flex;
-    padding: 3%;
+    padding: 1%;
     margin: -5%;
-    margin-left: 5%;
     margin-top: 15%;
+    margin-left: 10%;
     font-size: 20px;
     background:transparent;
     border: 0;
     border-bottom: 2px solid lightgrey;
     outline: none;
+    // position: absolute;
    
 }
 .loginBtn{
 padding: 5%;
 margin-left: 60%;
-margin-top: 40%;
+margin-top: 15%;
+text-align: center;
+// text-align: right;
 width: 30%;
 font-size: 20px;
+font-weight: 900;
 border-radius: 30px;
-border-color: #F47C7C;
-// text-align: center;
-position: absolute;
+// bord:white;
+text-align:right;
+background-color: white;
+border: 2px solid #F47C7C;
+// color:#F47C7C ;
+}
+.create{
+    position: absolute;
+    font-size: 2em;
+    font-weight: bold;
+    margin-top: 20%;
+    left: 10%;
+    // color: white;
+    
 }

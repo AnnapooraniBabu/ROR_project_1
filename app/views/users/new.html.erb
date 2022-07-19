@@ -1,0 +1,32 @@
+<div id="register">
+    <div class="log_img">
+         <%= image_tag 'cancel.png' , alt: 'speech-bubble', class: 'cross' %>
+         <%= image_tag 'india.png' , alt: 'speech-bubble', class: 'back_img' %>
+    </div>
+    <div class="log_con">
+        <p class="create">Create Account</p>
+        <div class="container">
+            <!-- <div class="con_g">
+                <%= image_tag 'search.png' , alt: 'speech-bubble', class: 'back_img' %>
+            </div>
+            <div class="con_g">
+                <%= image_tag 'fb.png' , alt: 'speech-bubble', class: 'back_img' %>
+            </div> -->
+            <%# <input type="text" name="name" placeholder="FullName" required autofocus>
+            <input type="email" name="email" placeholder="Email Address" required>
+            <input type="password" name="password" placeholder="Password" required>
+            <input type="number" name="number" placeholder="Phone Number" required> %>
+            <!-- <a href=""><p>Forgot password?</p></a> -->
+             <!-- <a href=""><p>Already an user</p></a> -->
+            <%# <button type="submit" class="loginBtn">Create</button> %>
+            <%= form_with(url: "/users", method: "POST") do |form|%>
+			  <%= form.text_field "user[name]", id:"name",placeholder: "FullName",class: "input", :required => true  %>
+              <%= form.email_field "user[email]", id: "email", placeholder: "Email address",class: "input" ,:required => true  %>
+              <%= form.telephone_field "user[number]", id: "number", placeholder: "Phone Number",class: "input" ,:required => true  %>
+              <%= form.password_field "user[password]", id: "password", placeholder: "Password",class: "input" ,:required => true  %>
+			  <%= form.submit "Create", class:"loginBtn", style: "text-align: center; " %>
+			<% end %>
+        </div>
+        
+    </div>
+</div>
