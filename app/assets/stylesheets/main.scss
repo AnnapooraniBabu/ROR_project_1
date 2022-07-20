@@ -1,8 +1,15 @@
+body{
+    margin: 0%;
+    padding: 0%;
+}
 .nav_con{
-    position: sticky;
+    // position: -webkit-sticky;
+    // position: sticky;
+    // top: 0;
+    position: fixed;
     width: 100%;
-    height: 30vh;
-    background-image: linear-gradient(to bottom right, red, yellow);
+    height: 25vh;
+    background-image: linear-gradient(to bottom right, #de6262 ,  #ffb88c);
     border: 1px solid #F47C7C;
 }
 .nav_subCon{
@@ -13,21 +20,22 @@
 }
 .nav_div{
     // position: sticky;
-    background-color: #F47C7C;
+    // background-color: #F47C7C;
     width: 100%;
     height: 8vh;
-    margin-top: 5%;
+    margin-top: 3.5%;
    
 }
 .nav_div li{
    
     display: inline-flex;
-    margin-left: 8%;
+    margin-left: 7.5%;
     font-size: 25px;
     font-weight: 500;
     margin-top: 1%;
-    
-    
+}
+.nav_div a{
+    color: aliceblue;
 }
 .search{
     position: absolute;
@@ -35,18 +43,19 @@
     height: 5vh;
     text-align: center;
     padding: 0%;
-    // padding-bottom: 1%;
     margin-left: 35%;
     // border-style:ridge;
-    border: 1px solid #F47C7C;
-    margin-top:2%;
+    border: 1px solid whitesmoke;
+    // outline: auto;
+    background-color: aliceblue;
+    margin-top:3%;
     
 }
 .search_img{
     position: absolute;
     width: 2%;
     margin-left: 57%;
-    margin-top: 2.3%;
+    margin-top: 3.3%;
     // display:inline;
     
 }
@@ -56,13 +65,26 @@
     // background-color: aquamarine;
     // border: #F47C7C 1px solid;
     margin-left: 80%;
-    margin-top: 2%;position: absolute;
+    margin-top: 3%;
+    position: absolute;
 
 }
 .icons{
     // position: absolute;
-    width: 12%;
-    margin-left: 10%;
+    width: 14%;
+    margin-left: 15%;
     display: inline;
+    margin-top: 2%;
+    
 }
-
+.main_img_1{
+    // position: absolute;
+    width: 50%;
+    margin-left: -1%;
+}
+.img_con{
+    // position: relative;
+}
+.img_con img {
+    display: flex;
+}
