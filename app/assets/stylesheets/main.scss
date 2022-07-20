@@ -1,0 +1,17 @@
+.nav_line{
+    position: relative;
+    background-color: #F47C7C;
+    width: 100%;
+    height: 8vh;
+    margin-top: 10%;
+   
+}
+.nav_line li{
+    // position:absolute;
+    display: inline-flex;
+    margin-left: 9%;
+    font-size: 25px;
+    font-weight: 500;
+    // left: -5%;
+    top: -15%;
+}
