@@ -20,10 +20,10 @@
              <!-- <a href=""><p>Already an user</p></a> -->
             <%# <button type="submit" class="loginBtn">Create</button> %>
             <%= form_with(url: "/users", method: "POST") do |form|%>
-			  <%= form.text_field "user[name]", id:"name",placeholder: "FullName",class: "input", :required => true  %>
-              <%= form.email_field "user[email]", id: "email", placeholder: "Email address",class: "input" ,:required => true  %>
-              <%= form.telephone_field "user[number]", id: "number", placeholder: "Phone Number",class: "input" ,:required => true  %>
-              <%= form.password_field "user[password]", id: "password", placeholder: "Password",class: "input" ,:required => true  %>
+			  <%= form.text_field "user[name]", id:"name",placeholder: "FullName",class: "input_user", :required => true  %>
+              <%= form.email_field "user[email]", id: "email", placeholder: "Email address",class: "input_user" ,:required => true  %>
+              <%= form.telephone_field "user[number]", id: "number", placeholder: "Phone Number",class: "input_user" ,:required => true  %>
+              <%= form.password_field "user[password]", id: "password", placeholder: "Password",class: "input_user" ,:required => true  %>
 			  <%= form.submit "Create", class:"loginBtn", style: "text-align: center; " %>
 			<% end %>
         </div>
