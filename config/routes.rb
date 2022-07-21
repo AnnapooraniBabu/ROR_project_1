@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   get 'main', to: 'home#main', as: :main
   resources :users
   get '/login', to: 'sessions#new', as: 'login'
-  post 'login', to: 'sessions#create'
+  post 'login', to: 'sessions#cre ``  ````````````````````````````````````````ate'
   # get 'register', to: 'users#register'
 end
 
