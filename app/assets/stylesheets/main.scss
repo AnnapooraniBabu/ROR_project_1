@@ -194,6 +194,45 @@ body{
 }
 .blog{
     width: 100%;
-    height: 50vh;
-    background-color:lightblue;
+    height: 70vh;
+    // background-color:lightblue;
+    // border: 8px solid blue;
+}
+.blog p{
+    display: inline-flex;
+    margin-left: 38%;
+    font-size: 3em;
+    font-weight: 700;
+    color: #fe6262;
+    top:10%;
+    letter-spacing: 8px;
+    
+}
+.line{
+    // display: flex;
+    margin-top: -4%;
+   left: -5%;
+}
+.blog div{
+    // top: -5%;
+    width: 30%;
+    height: 5vh;
+    // background-color: black;
+    margin-left: 26%;
+    margin-top: -3%;
+}
+.blog_img{
+
+    display: contents;
+    width: 50%;
+    height: 40vh;
+    margin-top: 2%;
+    // background-color: #F47C7C;
+}
+.blog_img img{
+    display: inline-flex;
+    width: 25%;
+    margin-left: 6%;
+    margin-top: 3%;
+    border-radius: 22px;
 }

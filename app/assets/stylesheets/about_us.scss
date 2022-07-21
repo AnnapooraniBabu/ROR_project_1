@@ -1,0 +1,28 @@
+body{
+    margin: 0%;
+    padding: 0%;
+}
+.nav_bar{
+    width: 100%;
+    height: 10vh;
+    background-image: linear-gradient(to bottom right, #de6262 ,  #ffb88c);
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    position: fixed;
+}
+.ul_div{
+    margin-left:60% ;
+    margin-top: 1.5%;
+    width: 30%;
+    height: 5vh;
+    
+    // background-color: aqua;
+}
+.ul_div li{
+    list-style: none;
+    display: inline;
+    font-size: 25px;
+    margin-left: 15%;
+    color: white;
+}
