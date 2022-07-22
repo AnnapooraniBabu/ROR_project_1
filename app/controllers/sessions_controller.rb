@@ -10,8 +10,8 @@ class SessionsController < ApplicationController
         # skip_before_filter :verify_authenticity_token 
         # user_params = params.permit(:email, :password)
         user = User.find_by(email: register_params[:email])
-        puts '---------------------------------------------njsndjn----------'
-        puts (params[:password])
+        # puts '---------------------------------------------njsndjn----------'
+        # puts (params[:password])
         if user && user.authenticate(register_params[:password])
           session[:current_user_id] = user.id
         
@@ -26,13 +26,11 @@ class SessionsController < ApplicationController
       end
   
       def destroy
-  
-        user[:user_id]=nil
+        session[:user_id]=nil
         flash[:notice] ="You have been logged out!"
         redirect_to root_path
-        
       end
-
+      
       private
       def register_params
         params.require(:user).permit(:email, :password)
