@@ -28,11 +28,28 @@
     
     </ul>
     </div>
-    <%= button_to "Logout", logout_path, method: :delete %>
+    <!-- <%= button_to "Logout", logout_path, method: :delete %> -->
 </div>
-<div class="img_div">
-<%= image_tag 'User.png' , alt: 'img'%>
-<%= image_tag 'User.png' , alt: 'img'%>
-<%= image_tag 'User.png' , alt: 'img'%>
-<%= image_tag 'User.png' , alt: 'img'%>
-</div>
+
+<div class="item-container">
+ <%= @items.each do |product| %>
+   <div class="img_div1">
+    
+
+     <div class="img_div">
+     
+       <%= image_tag product.img_url , alt: 'img' %>  
+      
+     </div>
+    
+      <div class="div_con">
+        <%= image_tag 'eye.png' , alt: 'eye', class: 'eye-img'%>
+        <%= image_tag 'Cart.png' , alt: 'eye', class: 'cart-img'%>
+      </div>
+     </div>
+     
+     
+
+  <% end %> 
+
+ </div>

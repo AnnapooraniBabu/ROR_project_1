@@ -1,0 +1,17 @@
+<!-- <%= form_with(url: "/items", method: "POST") do |form|%>
+   <%= form.text_field "user[item_name]", id:"name",placeholder: "Item Name",class: "item_input", :required => true  %>
+   <%= form.text_field "user[img_url]", id: "url", placeholder: "Image Url",class: "item_input" ,:required => true  %>
+   <%= form.number_field "user[quantity]", id: "quantity", placeholder: "Quantity",class: "item_input" ,:required => true  %>
+   <%= form.number_field "user[price]", id: "price", placeholder: "Price",class: "item_input" ,:required => true  %>
+   <%= form.submit "Create", class:"loginBtn", style: "text-align: center; " %>
+<% end %>
+ -->
+<div class="item-div">
+ <%= form_with(url: "/items", method: "POST") do |form|%>
+   <%= form.text_field "item[item_name]", id:"name",placeholder: "Item Name",class: "item_input", :required => true  %>
+   <%= form.text_field "item[img_url]", id: "url", placeholder: "Image Url",class: "item_input" ,:required => true  %>
+   <%= form.number_field "item[quantity]", id: "quantity", placeholder: "Quantity",class: "item_input" ,:required => true  %>
+   <%= form.number_field "item[price]", id: "price", placeholder: "Price",class: "item_input" ,:required => true  %>
+   <%= form.submit "Add", class:"addbtn", style: "text-align: center; " %>
+<% end %>
+</div>
