@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'items/show'
   root "home#index" 
   get 'main', to: 'home#main', as: :main
   resources :users
@@ -11,5 +12,6 @@ Rails.application.routes.draw do
   get 'users/home' , to: 'home#index'
   get 'users/login', to: 'sessions#new'
   delete 'logout', to: 'sessions#destroy'
+  get 'show' , to: 'items#show'
 end
 

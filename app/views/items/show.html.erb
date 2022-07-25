@@ -1,0 +1,38 @@
+<%# <h1>Items#show</h1>
+<p>Find me in app/views/items/show.html.erb</p> %>
+
+<div class="nav_con">
+  <div class="nav_subCon">
+    <input type="text" placeholder="Find your snack" class="search">
+    <a href=''> <%= image_tag 'Search.png', alt: 'Search_Icon', class: 'search_img'%></a>
+    <div class="heart">
+    <a href=''> <%= image_tag 'User.png', alt: 'Search_Icon', class: 'icons'%></a>
+    <a href=''> <%= image_tag 'favorite.png', alt: 'Search_Icon', class: 'icons'%></a>
+    <a href=''> <%= image_tag 'cart.png', alt: 'Search_Icon', class: 'icons'%></a>
+  </div>
+  </div>
+  
+  <div class="nav_div">
+    <ul>
+        <li><a href="">Pickles</a></li>
+        
+        <li><a href="">Papads & Fryums</a></li>
+        
+        <li><a href="">Health Mix</a></li>
+        
+        <li><a href="">Sweets</a></li>
+        
+        <li><a href="">Snacks</a></li>
+        
+        <li><a href="">Jaggery Sweets</a></li>
+    
+    </ul>
+    </div>
+    <%= button_to "Logout", logout_path, method: :delete %>
+</div>
+<div class="img_div">
+<%= image_tag 'User.png' , alt: 'img'%>
+<%= image_tag 'User.png' , alt: 'img'%>
+<%= image_tag 'User.png' , alt: 'img'%>
+<%= image_tag 'User.png' , alt: 'img'%>
+</div>

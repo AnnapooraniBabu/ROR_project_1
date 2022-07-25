@@ -1,0 +1,73 @@
+// Place all the styles related to the items controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+body{
+    margin: 0%;
+    padding: 0%;
+}
+.nav_con{
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    position: fixed;
+    width: 100%;
+    height: 25vh;
+    background-image: linear-gradient(to bottom right, #de6262 ,  #ffb88c);
+    border: 1px solid #F47C7C;
+}
+.nav_subCon{
+    // position: fixed;
+    position: relative;
+    width: 100%;
+    height: 10vh;
+    // background-color: antiquewhite;
+}
+.nav_div{
+    // position: sticky;
+    // background-color: #F47C7C;
+    width: 100%;
+    height: 8vh;
+    margin-top: 3.5%;
+   
+}
+.nav_div li{
+   
+    display: inline-flex;
+    margin-left: 7.5%;
+    font-size: 25px;
+    font-weight: 500;
+    margin-top: 1%;
+}
+.nav_div a{
+    color: aliceblue;
+}
+.search{
+    position: absolute;
+    width: 25%;
+    height: 5vh;
+    text-align: center;
+    padding: 0%;
+    margin-left: 35%;
+    // border-style:ridge;
+    border: 1px solid whitesmoke;
+    // outline: auto;
+    background-color: aliceblue;
+    margin-top:3%;
+    
+}
+.search_img{
+    position: absolute;
+    width: 2%;
+    margin-left: 57%;
+    margin-top: 3.3%;
+    // display:inline;
+    
+}
+.img_div{
+width: 80%;
+height: 80vh;
+background-color: #de6262;
+margin-top: 15%;
+margin-left: 10%;
+
+}
