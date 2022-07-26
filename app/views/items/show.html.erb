@@ -32,24 +32,25 @@
 </div>
 
 <div class="item-container">
- <%= @items.each do |product| %>
+ <% @items.each do |product| %>
    <div class="img_div1">
     
 
      <div class="img_div">
      
        <%= image_tag product.img_url , alt: 'img' %>  
+       
       
      </div>
     
       <div class="div_con">
-        <%= image_tag 'eye.png' , alt: 'eye', class: 'eye-img'%>
-        <%= image_tag 'Cart.png' , alt: 'eye', class: 'cart-img'%>
+        <!-- <h1><%=product.quantity%></h1> -->
+        <a href=""> <%= image_tag 'eye.png' , alt: 'eye', class: 'eye-img'%></a>
+        <a href=""> <%= image_tag 'Cart.png' , alt: 'eye', class: 'cart-img'%></a>
+       
+       
       </div>
      </div>
-     
-     
-
   <% end %> 
 
  </div>
