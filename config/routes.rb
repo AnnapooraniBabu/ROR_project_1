@@ -14,7 +14,14 @@ Rails.application.routes.draw do
   get 'users/login', to: 'sessions#new'
   delete 'logout', to: 'sessions#destroy'
   # match 'items/index',:to=>'items#index',:via=>:get
-  get 'show', to: 'items#show'
+  get '/show/snacks', to: 'items#snacks'
+  get '/show/papads&Fryums' , to: 'items#papads_fryums'
+  get '/show/healthmix' , to: 'items#healthmix'
+  get '/show/sweets' , to: 'items#sweets'
+  get '/show/jaggerysweets' , to: 'items#jaggerysweets'
+  get '/show/pickles' , to: 'items#pickles'
+  get 'item', to: 'items#item'
+ 
   get 'add', to: 'items#add'
   post 'items', to: 'items#create'
 

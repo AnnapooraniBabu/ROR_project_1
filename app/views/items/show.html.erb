@@ -14,17 +14,17 @@
   
   <div class="nav_div">
     <ul>
-        <li><a href="">Pickles</a></li>
+      <li><a href="/show/pickles">Pickles</a></li>
         
-        <li><a href="">Papads & Fryums</a></li>
-        
-        <li><a href="">Health Mix</a></li>
-        
-        <li><a href="">Sweets</a></li>
-        
-        <li><a href="">Snacks</a></li>
-        
-        <li><a href="">Jaggery Sweets</a></li>
+      <li><a href="/show/papads&Fryums">Papads & Fryums</a></li>
+      
+      <li><a href="/show/healthmix">Health Mix</a></li>
+      
+      <li><a href="/show/sweets">Sweets</a></li>
+      
+      <li><a href="/show/snacks">Snacks</a></li>
+      
+      <li><a href="/show/jaggerysweets">Jaggery Sweets</a></li>
     
     </ul>
     </div>
@@ -32,7 +32,9 @@
 </div>
 
 <div class="item-container">
- <% @items.each do |product| %>
+  <button class="add-btn"><a href="add">Add Item</a></button>
+  
+ <% items.each do |product| %>
    <div class="img_div1">
     
 

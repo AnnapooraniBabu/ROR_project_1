@@ -145,6 +145,15 @@ border-radius: 12px;
     justify-content: center;
 
 }
-h1{
-    color: black;
+.add-btn{
+    display: block;
+    padding: 1%;
+    font-size: 18px;
+    margin-left: 90%;
+    
+    text-decoration: none;
+    text-decoration-color: #de6262;
+}
+.add-btn a{
+    color: #de6262;
 }

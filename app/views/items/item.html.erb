@@ -1,0 +1,49 @@
+<div class="nav_con">
+    <div class="nav_subCon">
+      <input type="text" placeholder="Find your snack" class="search">
+      <a href=''> <%= image_tag 'Search.png', alt: 'Search_Icon', class: 'search_img'%></a>
+      <div class="heart">
+      <a href=''> <%= image_tag 'User.png', alt: 'Search_Icon', class: 'icons'%></a>
+      <a href=''> <%= image_tag 'favorite.png', alt: 'Search_Icon', class: 'icons'%></a>
+      <a href=''> <%= image_tag 'cart.png', alt: 'Search_Icon', class: 'icons'%></a>
+    </div>
+    </div>
+    
+    <div class="nav_div">
+      <ul>
+        <li><a href="/show/pickles">Pickles</a></li>
+          
+        <li><a href="/show/papads&Fryums">Papads & Fryums</a></li>
+        
+        <li><a href="/show/healthmix">Health Mix</a></li>
+        
+        <li><a href="/show/sweets">Sweets</a></li>
+        
+        <li><a href="/show/snacks">Snacks</a></li>
+        
+        <li><a href="/show/jaggerysweets">Jaggery Sweets</a></li>
+      
+      </ul>
+      </div>
+      <!-- <%= button_to "Logout", logout_path, method: :delete %> -->
+  </div>
+
+  <div class="con-container">
+    <%= image_tag 'https://cdn.shopify.com/s/files/1/0051/4159/4210/products/salted-nenthiram-chips-200g-660391_720x.jpg?v=1650705402', alt: 'item' %>
+    <p class="item-name">Salted Nenthiram Chips</p>
+    <p class="gram">Grams : g</p>
+    <p class="price">Rs. 159 </p>
+    <input type="number" class="quantity" placeholder="Quantity" value="1">
+    <input type="button" value="Add cart" class="add-Btn">
+  </div>
+  
+
+  <div class="con-container">
+    <%= image_tag 'https://cdn.shopify.com/s/files/1/0051/4159/4210/products/salted-nenthiram-chips-200g-660391_720x.jpg?v=1650705402', alt: 'item' %>
+    <p class="item-name">Salted Nenthiram Chips</p>
+    <p class="gram">Grams : g</p>
+    <p class="price">Rs. </p>
+    <input type="number" class="quantity" placeholder="Quantity" value="1">
+    <!-- <button type="submit" class="quantity">Add cart</button> -->
+    <input type="button" value="Add cart" class="add-btn">
+  </div>
