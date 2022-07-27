@@ -29,21 +29,26 @@
   </div>
 
   <div class="con-container">
-    <%= image_tag 'https://cdn.shopify.com/s/files/1/0051/4159/4210/products/salted-nenthiram-chips-200g-660391_720x.jpg?v=1650705402', alt: 'item' %>
+    <%= image_tag 'https://cdn.shopify.com/s/files/1/0051/4159/4210/products/salted-nenthiram-chips-200g-660391_720x.jpg?v=1650705402', alt: 'item' , class: 'item-img'%>
     <p class="item-name">Salted Nenthiram Chips</p>
     <p class="gram">Grams : g</p>
     <p class="price">Rs. 159 </p>
     <input type="number" class="quantity" placeholder="Quantity" value="1">
     <input type="button" value="Add cart" class="add-Btn">
+    <%= image_tag 'wishlist.png' , alt: 'wishlist' , class: 'wishlist-img' %>
+  </div>
+  <div class="suggestion">
+    <p class="suggestion-p">Suggestions</p>
+    <p class="tag-line">Best Selling products</p>
+    <div class="suggest-img-container">
+      <%= image_tag 'bestseller.png', alt: 'bestseller' , class: 'bestseller-img'%>
+      <%= image_tag 'https://cdn.shopify.com/s/files/1/0051/4159/4210/products/salted-nenthiram-chips-200g-660391_720x.jpg?v=1650705402', alt: 'item' , class: 'suggest-item-img'%>
+    </div>
+    <div class="bottom-btn">
+      <a href=""> <%= image_tag 'eye.png' , alt: 'eye', class: 'eye-btn'%></a>
+        <a href=""> <%= image_tag 'Cart.png' , alt: 'eye', class: 'eye-btn'%></a>
+    </div>
   </div>
   
 
-  <div class="con-container">
-    <%= image_tag 'https://cdn.shopify.com/s/files/1/0051/4159/4210/products/salted-nenthiram-chips-200g-660391_720x.jpg?v=1650705402', alt: 'item' %>
-    <p class="item-name">Salted Nenthiram Chips</p>
-    <p class="gram">Grams : g</p>
-    <p class="price">Rs. </p>
-    <input type="number" class="quantity" placeholder="Quantity" value="1">
-    <!-- <button type="submit" class="quantity">Add cart</button> -->
-    <input type="button" value="Add cart" class="add-btn">
-  </div>
+ 
