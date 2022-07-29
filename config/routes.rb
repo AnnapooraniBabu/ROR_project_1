@@ -24,7 +24,9 @@ Rails.application.routes.draw do
  
   get '/show/add', to: 'items#add'
   post 'items', to: 'items#create'
-  get '/wishlist/:product_id' , to: 'home#wishlist'
+  get '/wishlist/:product_id' , to: 'home#wishlist_item'
+  get '/wishlist', to: 'home#wishlist'
+
 
 
 end
