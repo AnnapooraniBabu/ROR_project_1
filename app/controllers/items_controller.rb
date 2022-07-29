@@ -1,7 +1,8 @@
+$cur_item = nil
 class ItemsController < ApplicationController
   skip_before_action :ensure_user_logged_in
   def show
-    # @items = Item.all.map do |values|
+    # @items_all = Item.all.map do |values|
     #   values
     # @items = Item.select('img_url,item_name, quantity, price').where(category: 'snacks')
     # end
@@ -10,9 +11,10 @@ class ItemsController < ApplicationController
     #   todolist
     # end
     # @show_data
+    # @shows = Item.all
   end
   def snacks
-    @items = Item.select('img_url,item_name, quantity, price').where(category: 'snacks')
+    @items = Item.where(category: 'snacks')
    render 'items/show', locals: { items:  @items}
 
   end
@@ -54,6 +56,28 @@ class ItemsController < ApplicationController
     end
   end
 
+  def show_selected_item
+    item_id = params[:item_id]
+    $cur_item = Item.find(item_id)
+    render 'items/item' 
+
+    random_items
+    # User.limit(5).order("RAND()")
+    # $random_val = Item.limit(5).order("RAND()")
+    # puts random_val
+    
+  end
+  def random_items
+    # random_val =  Random.new
+    # 5.times.map{ rand(1..10000000000) }.sort
+    rand_val = 5.times.map{rand(1..15) }.sort
+    # @random_item = Item.find(rand_val)
+    #  locals: { random_items:   @random_item}
+    # puts "Random item is #{@random_item}"
+  
+  
+    puts "Random number is #{rand_val}"
+  end
   private
   def item_params
     params.require(:item).permit(:img_url, :item_name, :quantity, :price)

@@ -36,22 +36,19 @@
   
  <% items.each do |product| %>
    <div class="img_div1">
-    
-
-     <div class="img_div">
-     
-       <%= image_tag product.img_url , alt: 'img' %>  
-       
-      
+    <!-- <a href=""> <%= image_tag 'like.png' , alt: 'wishlist-img1', class: 'save-item'%></a> -->
+     <div class="img_div"> 
+       <a href="/item/<%= product['id'] %>"><%= image_tag product.img_url , alt: 'img' %>  </a>
      </div>
     
       <div class="div_con">
         <!-- <h1><%=product.quantity%></h1> -->
-        <a href=""> <%= image_tag 'eye.png' , alt: 'eye', class: 'eye-img'%></a>
+        <a href="/wishlist/<%= product['id']%>"> <%= image_tag 'eye.png' , alt: 'eye', class: 'eye-img'%></a>
         <a href=""> <%= image_tag 'Cart.png' , alt: 'eye', class: 'cart-img'%></a>
        
        
       </div>
+      
      </div>
   <% end %> 
 

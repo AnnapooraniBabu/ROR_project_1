@@ -1,3 +1,8 @@
+<% display_item = $cur_item %>
+<!-- <% random_item = $random_item%> -->
+
+
+
 <div class="nav_con">
     <div class="nav_subCon">
       <input type="text" placeholder="Find your snack" class="search">
@@ -29,10 +34,10 @@
   </div>
 
   <div class="con-container">
-    <%= image_tag 'https://cdn.shopify.com/s/files/1/0051/4159/4210/products/salted-nenthiram-chips-200g-660391_720x.jpg?v=1650705402', alt: 'item' , class: 'item-img'%>
-    <p class="item-name">Salted Nenthiram Chips</p>
-    <p class="gram">Grams : g</p>
-    <p class="price">Rs. 159 </p>
+    <img src="<%= display_item['img_url'] %>" class="item-img" alt="">
+    <p class="item-name"><%= display_item['item_name']%></p>
+    <p class="gram">Grams : <%= display_item['quantity']%>g</p>
+    <p class="price">Rs. <%= display_item['price']%> </p>
     <input type="number" class="quantity" placeholder="Quantity" value="1">
     <input type="button" value="Add cart" class="add-Btn">
     <%= image_tag 'wishlist.png' , alt: 'wishlist' , class: 'wishlist-img' %>
@@ -41,13 +46,14 @@
     <p class="suggestion-p">Suggestions</p>
     <p class="tag-line">Best Selling products</p>
     <div class="suggest-img-container">
-      <%= image_tag 'bestseller.png', alt: 'bestseller' , class: 'bestseller-img'%>
-      <%= image_tag 'https://cdn.shopify.com/s/files/1/0051/4159/4210/products/salted-nenthiram-chips-200g-660391_720x.jpg?v=1650705402', alt: 'item' , class: 'suggest-item-img'%>
+    <%= image_tag 'bestseller.png', alt: 'bestseller' , class: 'bestseller-img'%>
+     <img src="<%= display_item['img_url'] %>" class="suggest-item-img" alt=""> 
     </div>
     <div class="bottom-btn">
-      <a href=""> <%= image_tag 'eye.png' , alt: 'eye', class: 'eye-btn'%></a>
+        <a href=""> <%= image_tag 'eye.png' , alt: 'eye', class: 'eye-btn'%></a>
         <a href=""> <%= image_tag 'Cart.png' , alt: 'eye', class: 'eye-btn'%></a>
     </div>
+  
   </div>
   
 

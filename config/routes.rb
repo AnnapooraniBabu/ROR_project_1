@@ -20,10 +20,11 @@ Rails.application.routes.draw do
   get '/show/sweets' , to: 'items#sweets'
   get '/show/jaggerysweets' , to: 'items#jaggerysweets'
   get '/show/pickles' , to: 'items#pickles'
-  get 'item', to: 'items#item'
+  get '/item/:item_id', to: 'items#show_selected_item', as: :item_id
  
-  get 'add', to: 'items#add'
+  get '/show/add', to: 'items#add'
   post 'items', to: 'items#create'
+  get '/wishlist/:product_id' , to: 'home#wishlist'
 
 
 end
