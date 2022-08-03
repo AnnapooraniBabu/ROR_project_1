@@ -2,16 +2,7 @@ $cur_item = nil
 class ItemsController < ApplicationController
   skip_before_action :ensure_user_logged_in
   def show
-    # @items_all = Item.all.map do |values|
-    #   values
-    # @items = Item.select('img_url,item_name, quantity, price').where(category: 'snacks')
-    # end
-    # @items
-    # @show_data = Todo.all.map do |todolist|
-    #   todolist
-    # end
-    # @show_data
-    # @shows = Item.all
+    
   end
   def snacks
     @items = Item.where(category: 'snacks')

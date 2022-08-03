@@ -7,7 +7,7 @@
     <a href=''> <%= image_tag 'Search.png', alt: 'Search_Icon', class: 'search_img'%></a>
     <div class="heart">
     <a href=''> <%= image_tag 'User.png', alt: 'Search_Icon', class: 'icons'%></a>
-    <a href='/wishlist'> <%= image_tag 'favorite.png', alt: 'Search_Icon', class: 'icons'%></a>
+    <a href='wish-list'> <%= image_tag 'favorite.png', alt: 'Search_Icon', class: 'icons'%></a>
     <a href=''> <%= image_tag 'cart.png', alt: 'Search_Icon', class: 'icons'%></a>
   </div>
   </div>
@@ -43,6 +43,7 @@
     
       <div class="div_con">
         <!-- <h1><%=product.quantity%></h1> -->
+        <!-- <a href="/wishlist/<%= product['id']%>"> <%= image_tag 'eye.png' , alt: 'eye', class: 'eye-img'%></a> -->
         <a href="/wishlist/<%= product['id']%>"> <%= image_tag 'eye.png' , alt: 'eye', class: 'eye-img'%></a>
         <a href=""> <%= image_tag 'Cart.png' , alt: 'eye', class: 'cart-img'%></a>
        

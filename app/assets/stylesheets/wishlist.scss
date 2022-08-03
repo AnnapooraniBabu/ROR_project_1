@@ -6,10 +6,12 @@
     margin-left: 5%;
 }
 .item-img-container{
-    margin-left: 5%;
+    margin-left: 12%;
+    margin-top: 5%;
     width: 20%;
     height: 43vh;
-    display: inline-flex;
+    display:inline-flex;
+    margin-right: 10%;
     // background-color: black;
     // border: 1px solid black;
     // margin-top: -3%;
@@ -19,7 +21,7 @@
     width: 100%;
     height: 35vh;
     // display:flex;
-    background-color: purple;
+    // background-color: purple;
 }
 .item-img-wishlist{
     display:flex;
@@ -55,7 +57,7 @@
     // width: 100%;
     width: 3%;
     margin-left: -19%;
-    position: relative;
+    // position: relative;
     bottom: 255px;
     // opacity: 0;
     // display: none;
