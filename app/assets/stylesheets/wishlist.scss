@@ -1,27 +1,33 @@
 .wishlist-container{
     width: 90%;
     height: 80vh;
-    // background-color: lightcoral;
+    // background-color: lightblue;
     margin-top: 15%;
     margin-left: 5%;
 }
 .item-img-container{
-    margin-left: 12%;
+    margin-left: 15%;
     margin-top: 5%;
     width: 20%;
     height: 43vh;
     display:inline-flex;
-    margin-right: 10%;
+    margin-right:15%;
     // background-color: black;
     // border: 1px solid black;
     // margin-top: -3%;
 }
-.item-img-wl-div{margin: 0%;
+.item-img-wl-div{
+    margin: 0%;
     // position: relative;
     width: 100%;
     height: 35vh;
     // display:flex;
     // background-color: purple;
+}
+.item-wl-div-img1{
+    width: 100%;
+    height: 35vh;
+    // position: absolute;
 }
 .item-img-wishlist{
     display:flex;
@@ -45,25 +51,15 @@
     margin-left: 25%;
     margin-top: 5%;
 }
-// .wishlist-img1{
-//     // display:inline-block;
-//     background-position:0em;
-//     background-color: yellow;
-//     // position: absolute;
-//     width: 20%;
-//     height: 7vh;
-// }
+
 .wishlist-img1{
     // width: 100%;
     width: 3%;
-    margin-left: -19%;
-    // position: relative;
-    bottom: 255px;
-    // opacity: 0;
-    // display: none;
-    // visibility: hidden;
-    // display: inline-flex;
-    // margin-top: 5%;
+    margin-left: -34%;
+    // bottom: 255px;
+    margin-bottom: 255px;
+    // margin-top: 20%;
+    
 }
 .hover-div{
     // margin-top: -50%;
@@ -79,14 +75,3 @@
     background-color: blueviolet;
 }
 
-// .item-img-container:hover + .hover-div{
-//     opacity: 1;
-//     // display: block;
-//     // visibility: visible;
-// }
-
-// .wishlist-img1:hover{
-//     transition: 0.3s;
-//     display: block;
-
-// }

@@ -33,7 +33,9 @@
 
 <div class="item-container">
   <button class="add-btn"><a href="add">Add Item</a></button>
-  
+  <% if flash[:notice] %>
+  <div class="flash-msg"><%= flash[:notice] %></div>
+<% end %>
  <% items.each do |product| %>
    <div class="img_div1">
     <!-- <a href=""> <%= image_tag 'like.png' , alt: 'wishlist-img1', class: 'save-item'%></a> -->

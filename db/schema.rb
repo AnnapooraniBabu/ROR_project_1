@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_07_29_071050) do
+ActiveRecord::Schema.define(version: 2022_08_03_114440) do
 
   create_table "items", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "img_url"
@@ -35,6 +35,7 @@ ActiveRecord::Schema.define(version: 2022_07_29_071050) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.bigint "item_id", null: false
+    t.bigint "user_id"
     t.index ["item_id"], name: "index_wishlists_on_item_id"
   end
 
