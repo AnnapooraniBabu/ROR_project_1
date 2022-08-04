@@ -9,8 +9,6 @@ class HomeController < ApplicationController
    
     def wishlist
         @items = Item.joins(:wishlist).all.map do|wishlist|
-        #  locals: { items:  @items}
-        # @items = Wishlist.all.map do|wishlist|
             wishlist
         end
      puts " @items is #{ @items}" 
@@ -18,16 +16,18 @@ class HomeController < ApplicationController
     end
 
     def wishlist_items
-        cur_user_id = session[:current_user_id]
-        puts " cur_user_id is #{ cur_user_id}"
-             if current_user_id = nil
-             flash[:notice] = "Please Login!"
-             puts "cur_user_id is #{cur_user_id}"
+        current_user = session[:current_user_id]
+        puts " current_user is #{ current_user}"
+             if current_user == nil
+             flash[:alert] = "Please Login!"
+             puts "cur_user_id is #{current_user}"
+             redirect_to '/show/snacks'
              else 
 
-        # @wl_items = Wishlist.all, 
         product_id = params[:product_id]
+        flash[:alert] = "Added to Wishlist!"
         cur_user_id = session[:current_user_id]
+        puts "cur_user_id is #{cur_user_id}"
         # puts "product_id is #{product_id}"
         # prod_id = {:item_id => product_id}
         # puts "Prod_id is #{prod_id}"
@@ -36,9 +36,9 @@ class HomeController < ApplicationController
         # puts "wishlist_products is #{@wishlist_products}"
         #  locals: { wishlist_products:  @wishlist_products}
         # puts wishlist
-        # p "================================================="
-        # p "================================================="
-        # p "================================================="
+        p "================================================="
+        p "================================================="
+        p "================================================="
 
        
         if @wishlist_products.save
@@ -48,7 +48,8 @@ class HomeController < ApplicationController
             render plain: 'Failed'
         end
     end
+    
     end
    
-    
+   
 end

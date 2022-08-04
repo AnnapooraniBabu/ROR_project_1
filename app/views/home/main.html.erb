@@ -4,7 +4,14 @@
     <input type="text" placeholder="Find your snack" class="search">
     <a href=''> <%= image_tag 'Search.png', alt: 'Search_Icon', class: 'search_img'%></a>
     <div class="heart">
-    <a href=''> <%= image_tag 'User.png', alt: 'Search_Icon', class: 'icons'%></a>
+    <a class="ace"  href=''> <%= image_tag 'User.png', alt: 'Search_Icon', class: 'icons', id: 'user' %>
+      <div id="log" class="drop-down">
+        <ul>
+       
+        <li><a href="">Login</a></li>
+      </ul></div>
+    </a>
+      
     <a href='wish-list'> <%= image_tag 'favorite.png', alt: 'Search_Icon', class: 'icons'%></a>
     <a href=''> <%= image_tag 'cart.png', alt: 'Search_Icon', class: 'icons'%></a>
   </div>
@@ -79,4 +86,11 @@
 
 </div>
 
-<script src="https://kit.fontawesome.com/0da631b9cc.js" crossorigin="anonymous"></script>
+<!-- <script src="https://kit.fontawesome.com/0da631b9cc.js" crossorigin="anonymous">
+  
+</script> -->
+<script>
+  function onclickUser(){
+    
+  }
+</script>

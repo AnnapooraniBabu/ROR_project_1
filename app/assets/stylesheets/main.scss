@@ -236,3 +236,21 @@ body{
     margin-top: 3%;
     border-radius: 22px;
 }
+.drop-down {
+    position: absolute;
+    background-color: white;
+    width: 30%;
+    margin-left: 8%;
+    // display: none;
+  
+    
+}
+
+#user:hover .drop-down{
+    border: 2px solid black;
+    display: block;
+}
+.drop-down li{
+    list-style-type:none;
+    margin-left: -35%;
+}

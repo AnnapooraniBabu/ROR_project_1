@@ -13,7 +13,7 @@ class SessionsController < ApplicationController
         # puts '---------------------------------------------njsndjn----------'
         # puts (params[:password])
         if user && user.authenticate(register_params[:password])
-          session[:current_user_id] = user
+          session[:current_user_id] = user.id
         
          flash.now[:alert] ="Logged in successfully"
          redirect_to main_path
@@ -25,10 +25,16 @@ class SessionsController < ApplicationController
         end
       end
   
-      def destroy
-        session[:user_id]=nil
-        flash[:notice] ="You have been logged out!"
-        redirect_to root_path
+      # def destroy
+      #   puts session[:user_id]
+      #   session[:user_id]=nil
+      #   flash[:notice] ="You have been logged out!"
+      #   redirect_to root_path
+      # end
+      def destroy        
+        session[:current_user_id] = nil   
+        puts "  session[:current_user_id] is #{  session[:current_user_id]}"      
+        redirect_to root_path 
       end
       
       private
