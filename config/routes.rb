@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   
   
+  get 'carts/cart'
   root "home#index" 
   get 'main', to: 'home#main', as: :main
   resources :users
@@ -25,8 +26,9 @@ Rails.application.routes.draw do
   get '/show/add', to: 'items#add'
   post 'items', to: 'items#create'
   get '/wishlist/:product_id' , to: 'home#wishlist_items'
-  get '/wishlist' , to: 'home#wishlist'
+  get '/wish-list' , to: 'home#wishlist'
   get '/show/wish-list', to: 'home#wishlist'
+  get '/cart', to: 'carts#cart'
 
 
 
