@@ -4,7 +4,7 @@
 .cart-container{
     width: 90%;
     height: 70vh;
-    background-color: lightgreen;
+    // background-color: lightgreen;
     margin-left: 5%;
     margin-top: 10%;
     
@@ -13,19 +13,39 @@
     width: 20%;
     height: 40vh;
     display: inline-flex;
-    background-color: lightcoral;
+    // background-color: lightcoral;
     margin-left: 10%;
     margin-top: 5%;
+    border-top-left-radius: 12px ;
+    border-top-right-radius: 12px;
+    border-bottom-left-radius: 12px;
+    border-bottom-right-radius: 12px;
 }
-.cart-img{
+.cart-img-container{
     width: 100%;
     height: 32vh;
+    border-top-left-radius: 12px ;
+    border-top-right-radius: 12px;
     // background-color: lightseagreen;
+}
+.cart-img-container img{
+    width: 100%;
+    border-top-left-radius: 12px ;
+    border-top-right-radius: 12px;
+
 }
 .cart-bttn{
 width: 100%;
 height: 8vh;
 margin-top: 92%;
 margin-left: -100%;
-background-color: lightskyblue;
+background-color: #de6262;
+border-bottom-left-radius: 12px;
+    border-bottom-right-radius: 12px;
+
+}
+.cart-bttn img{
+    width: 10%;
+    margin-top: 5%;
+    margin-left: 45%;
 }

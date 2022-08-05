@@ -29,6 +29,9 @@ Rails.application.routes.draw do
   get '/wish-list' , to: 'home#wishlist'
   get '/show/wish-list', to: 'home#wishlist'
   get '/cart', to: 'carts#cart'
+  get '/cart', to: 'carts#show_cart_items'
+  get 'cart_page/:cart_item_id', to: 'carts#delete_item'
+  get '/cart/:product_id' , to: 'carts#create'
 
 
 
