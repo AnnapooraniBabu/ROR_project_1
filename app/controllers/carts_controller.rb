@@ -38,9 +38,9 @@ end
 def delete_item
   cart_product_id = params[:cart_item_id]
   puts "cart_product_id is #{cart_product_id}"
-  cur_remove_cart_id = Cart.where(item_id: cart_product_id )
+  cur_remove_cart_id = Cart.find_by(item_id: cart_product_id )
   puts "cur_remove_cart_id is #{cur_remove_cart_id}"
-  if Cart.find(cur_remove_cart_id.id).delete
+  if cur_remove_cart_id.destroy
     redirect_to '/cart'
   # render plain: true
   else

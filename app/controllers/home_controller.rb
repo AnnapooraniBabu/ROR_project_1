@@ -51,6 +51,18 @@ class HomeController < ApplicationController
     end
     
     end 
+
+    def delete_wishlist_item
+        wishlist_product_id = params[:wishlist_product_id]
+        puts "wishlist_product_id is #{wishlist_product_id}"
+        cur_remove_wishlist_id = Wishlist.find_by(item_id: wishlist_product_id )
+        puts "cur_remove_wishlist_id is #{cur_remove_wishlist_id}"
+        if cur_remove_wishlist_id.destroy
+            redirect_to 'show/wish-list'
+            else
+                render plain: false
+            end
+    end
    
    
 end
