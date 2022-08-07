@@ -1,24 +1,24 @@
-# README
+### E-commerce Application
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Project name - Mom's Delish
 
-Things you may want to cover:
+## What is Mom's Delish ?
+    # Mom's Delish is a e-commerce application where we can buy homemade sweets, snacks, podis, pickles and health mixes which is very affordable. 
+## Why I chose Mom's Delish ?
+    # I chose mom's delish to help my mom because she is good in doing sweets, snacks and all. When I was born and till now she is taking care of me, I did not give back her anything. So I created this web application for her.
+  
+## Features of Mom's Delish :
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+  1. Sign Up      -        Completed
+  2. Sign In      -        Completed
+  3. Add items    -        Completed
+  4. List items   -        Completed
+  5. Wishlist     -        Inprogress
+  6. Cart         -        Completed
+  7. Suggestions  -        Inprogress
+  8. Search       -        Yet to start
+  9. Feedback     -        Yet to start
+  10. Blogs       -        Yet to start
+  11. Categories  -        Completed
+  12. Payment     -        Yet to start
+     
