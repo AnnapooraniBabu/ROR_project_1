@@ -6,7 +6,7 @@
    <p> Mom's Delish is an e-commerce application where we can buy homemade sweets, snacks, podis, pickles and health mixes which is very affordable. </p>
    
 ### Why I chose Mom's Delish ?
-   <p>  I chose mom's delish to help my mom because she is good in doing sweets, snacks and all. When I was born and till now she is taking care of me, I did not give back her anything. So I created this web application for her which is very helpful for her.</p>
+   <p>  I chose mom's delish to help my mom because she is good in doing sweets, snacks and all. When I was born and till now she is taking care of me, I did not give back her anything. So I created this web application for her which is very helpful to her.</p>
   
 ### Features of Mom's Delish :
 
