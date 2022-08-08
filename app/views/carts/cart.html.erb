@@ -34,7 +34,7 @@
  <% @cart_items.each do |cart_item| %>
 
     <div class="cart-item-container">
-        <div class="cart-img-container"><a href=""><%= image_tag cart_item['img_url'] , alt: 'cart-item', class: 'cart-item-img'%></a></div>
+        <div class="cart-img-container"> <a href="/item/<%= cart_item['id'] %>"><%= image_tag cart_item['img_url'] , alt: 'cart-item', class: 'cart-item-img'%></a></div>
         <div class="cart-bttn">
           <a href="cart_page/<%= cart_item['id']%>">  <%= image_tag 'bin.png' , alt: 'cart-item', class: 'cart-item-img'%></a>
         

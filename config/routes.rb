@@ -31,10 +31,10 @@ Rails.application.routes.draw do
   get '/cart', to: 'carts#cart'
   get '/cart', to: 'carts#show_cart_items'
   get 'cart_page/:cart_item_id', to: 'carts#delete_item'
-  get '/show/wish-list/:wishlist_product_id', to: 'home#delete_wishlist_item'
+  delete '/show/wish-list/:wishlist_product_id', to: 'home#delete_wishlist_item'
   get '/cart/:product_id' , to: 'carts#create'
 
-
+get '/item/cart_page/:prod_id', to: 'items#add_to_cart'
 
 end
 

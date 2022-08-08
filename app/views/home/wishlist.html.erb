@@ -6,7 +6,7 @@
     <div class="heart">
     <a href=''> <%= image_tag 'User.png', alt: 'Search_Icon', class: 'icons'%></a>
     <a href=''> <%= image_tag 'favorite.png', alt: 'Search_Icon', class: 'icons'%></a>
-    <a href=''> <%= image_tag 'cart.png', alt: 'Search_Icon', class: 'icons'%></a>
+    <a href='/cart'> <%= image_tag 'cart.png', alt: 'Search_Icon', class: 'icons'%></a>
   </div>
   </div>
   
@@ -29,25 +29,42 @@
     <!-- <%= button_to "Logout", logout_path, method: :delete %> -->
 </div>
 
-<div class="wishlist-container">
-<% @items.each do|wishlist_items|%>
-<div class="item-img-container">
-  
-    <div class="item-img-wl-div">
-      <a href=""> <%= image_tag  wishlist_items['img_url'] , alt: 'product_image' , class: "item-wl-div-img1"%></a>
-
-
-     </div>
-    <div class="bottom-btn-wishlist">
-      <a href="wish-list/<%= wishlist_items[:id]%>"> <%= image_tag 'eye.png' , alt: 'Eye-btn'%></a>
-      <a href=""> <%= image_tag 'Cart.png' , alt: 'Cart-btn'%></a> 
+<!-- <div class="wishlist-container">
+  <% @items.each do|wishlist_items|%>
+  <div class="wishlist-item-container">
+    <div class="wishlist-img-container">
+      <a href=""> <%= image_tag  wishlist_items['img_url'] , alt: 'wishlist_item'  %></a>
     </div>
- 
+    <div class="wishlist-btn-container">
+      <a href=""><%= image_tag 'eye.png' , alt: 'wishlist_btn' %></a>
+      <a href=""> <%= image_tag 'cart.png' , alt: 'wishlist_btn' %></a>
+    </div>
   </div>
-  <!-- <div class="hover-div"> -->
+  <div class="hover-div">
+    <a href="wish-list/<%= wishlist_items[:id]%>" data-method="delete"><%= image_tag 'love.png' , alt: 'wishlist-like-img', class: 'wishlist-like-img'%></a>
     
-      <a href=""> <%= image_tag 'love.png' , alt: 'wishlist-img1', class: 'wishlist-img1'%></a>
+
+  </div>
+  <% end %>
+</div> -->
+
+<div class="wl-container">
+  <% @items.each do |wishlist_items| %>
+ 
+     <div class="wl-item-container">
+         <div class="cart-img-container"><a href=""><%= image_tag wishlist_items['img_url'] , alt: 'cart-item', class: 'cart-item-img'%></a></div>
+         <div class="wl-bttn">
+           
+           <a href=""><%= image_tag 'eye.png' , alt: 'wishlist_btn' , class: 'wl-btn'%></a>
+           <a href="/cart"> <%= image_tag 'cart.png' , alt: 'wishlist_btn' , class: 'wl-btn'%></a>
+         </div>
+     </div>
+     <div class="hover-div">
+      <a href="wish-list/<%= wishlist_items[:id]%>" data-method="delete"><%= image_tag 'love.png' , alt: 'wishlist-like-img', class: 'wishlist-like-img'%></a>
+      
+  
+    </div>
+     <% end %>
      
- <% end %>
-  <!-- </div> -->
-</div>
+    
+ </div>

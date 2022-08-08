@@ -53,15 +53,17 @@ class HomeController < ApplicationController
     end 
 
     def delete_wishlist_item
-        wishlist_product_id = params[:wishlist_product_id]
-        puts "wishlist_product_id is #{wishlist_product_id}"
-        cur_remove_wishlist_id = Wishlist.find_by(item_id: wishlist_product_id )
-        puts "cur_remove_wishlist_id is #{cur_remove_wishlist_id}"
-        if cur_remove_wishlist_id.destroy
-            redirect_to 'show/wish-list'
-            else
-                render plain: false
-            end
+        cur_user_id = session[:current_user_id]
+        del_id = params[:wishlist_product_id]
+        puts "wishlist_product_id is #{del_id}"
+        del_wishlist = Wishlist.find_by(item_id: del_id)
+        del_wishlist.destroy
+        del_wishlist.save
+        redirect_to '/show/wish-list'
+            
+            
+                
+            
     end
    
    

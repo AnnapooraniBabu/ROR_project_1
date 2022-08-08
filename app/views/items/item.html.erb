@@ -9,8 +9,8 @@
       <a href=''> <%= image_tag 'Search.png', alt: 'Search_Icon', class: 'search_img'%></a>
       <div class="heart">
       <a href=''> <%= image_tag 'User.png', alt: 'Search_Icon', class: 'icons'%></a>
-      <a href=''> <%= image_tag 'favorite.png', alt: 'Search_Icon', class: 'icons'%></a>
-      <a href=''> <%= image_tag 'cart.png', alt: 'Search_Icon', class: 'icons'%></a>
+      <a href='/wish-list'> <%= image_tag 'favorite.png', alt: 'Search_Icon', class: 'icons'%></a>
+      <a href='/cart'> <%= image_tag 'cart.png', alt: 'Search_Icon', class: 'icons'%></a>
     </div>
     </div>
     
@@ -39,8 +39,9 @@
     <p class="gram">Grams : <%= display_item['quantity']%>g</p>
     <p class="price">Rs. <%= display_item['price']%> </p>
     <input type="number" class="quantity" placeholder="Quantity" value="1">
-    <input type="button" value="Add cart" class="add-Btn">
-    <%= image_tag 'wishlist.png' , alt: 'wishlist' , class: 'wishlist-img' %>
+   <a href="cart_page/<%= display_item['id']%>"> <input type="button" value="Add cart" class="add-Btn"></a>
+    <a href=""><%= image_tag 'wishlist.png' , alt: 'wishlist' , class: 'wishlist-img' %></a>
+    
   </div>
   <div class="suggestion">
     <p class="suggestion-p">Suggestions</p>
@@ -51,7 +52,7 @@
     </div>
     <div class="bottom-btn">
         <a href=""> <%= image_tag 'eye.png' , alt: 'eye', class: 'eye-btn'%></a>
-        <a href=""> <%= image_tag 'Cart.png' , alt: 'eye', class: 'eye-btn'%></a>
+        <a href=""> <%= image_tag 'Cart.png' , alt: 'cart', class: 'eye-btn'%></a>
     </div>
   
   </div>
