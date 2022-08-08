@@ -39,6 +39,7 @@
     <p class="gram">Grams : <%= display_item['quantity']%>g</p>
     <p class="price">Rs. <%= display_item['price']%> </p>
     <input type="number" class="quantity" placeholder="Quantity" value="1">
+    <br><br><br><br>
    <a href="cart_page/<%= display_item['id']%>"> <input type="button" value="Add cart" class="add-Btn"></a>
     <a href=""><%= image_tag 'wishlist.png' , alt: 'wishlist' , class: 'wishlist-img' %></a>
     

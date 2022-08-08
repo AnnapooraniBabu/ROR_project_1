@@ -52,11 +52,11 @@
   <% @items.each do |wishlist_items| %>
  
      <div class="wl-item-container">
-         <div class="cart-img-container"><a href=""><%= image_tag wishlist_items['img_url'] , alt: 'cart-item', class: 'cart-item-img'%></a></div>
+         <div class="cart-img-container"><a href="/item/<%= wishlist_items['id'] %>"><%= image_tag wishlist_items['img_url'] , alt: 'cart-item', class: 'cart-item-img' %></div></a>
          <div class="wl-bttn">
            
            <a href=""><%= image_tag 'eye.png' , alt: 'wishlist_btn' , class: 'wl-btn'%></a>
-           <a href="/cart"> <%= image_tag 'cart.png' , alt: 'wishlist_btn' , class: 'wl-btn'%></a>
+           <a href="/cart/<%= wishlist_items['id']%>"> <%= image_tag 'cart.png' , alt: 'wishlist_btn' , class: 'wl-btn'%></a>
          </div>
      </div>
      <div class="hover-div">
