@@ -32,27 +32,31 @@
 </div>
 <div class="cart-container">
  <% @cart_items.each do |cart_item| %>
-
+<div class="cart-whole-item-container">
     <div class="cart-item-container">
-        <div class="cart-img-container"> <a href="/item/<%= cart_item['id'] %>"><%= image_tag cart_item['img_url'] , alt: 'cart-item', class: 'cart-item-img'%></a></div>
+        <div class="cart-img-container"> 
+          <a href="/item/<%= cart_item['id'] %>">
+            <%= image_tag cart_item['img_url'] , alt: 'cart-item', class: 'cart-item-img'%>
+          </a>
+        </div>
         <div class="cart-bttn">
-          <a href="cart_page/<%= cart_item['id']%>">  <%= image_tag 'bin.png' , alt: 'cart-item', class: 'cart-item-img'%></a>
+          <a href="cart_page/<%= cart_item['id']%>">  <%= image_tag 'bin.png' , alt: 'cart-item', class: 'cart-btn-img'%></a>
         
         </div>
     </div>
+    <div class="item-content">
+      <p class="item-name-ptag">
+        <%= cart_item['item_name'].upcase
+        %> (  <%= cart_item['quantity']
+        %>G  )
+      </p>
+        <p class="item-price-ptag">
+          Rs. <%= cart_item['price'] %>
+        </p>
+    </div>
+  </div>
     <% end %>
     
-    <!-- <div class="cart-item-container">
-        <div class="cart-img"></div>
-        <div class="cart-btn"></div>
-    </div>
-    <div class="cart-item-container">
-        <div class="cart-img"></div>
-        <div class="cart-btn"></div>
-    </div>
-    <div class="cart-item-container">
-        <div class="cart-img"></div>
-        <div class="cart-btn"></div>
-    </div> -->
+    
 </div>
           

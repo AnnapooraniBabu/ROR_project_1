@@ -31,7 +31,7 @@ class HomeController < ApplicationController
              # puts "product_id is #{product_id}"
              # prod_id = {:item_id => product_id}
              # puts "Prod_id is #{prod_id}" 
-             @wishlist_products = Wishlist.new(item_id: product_id)
+             @wishlist_products = Wishlist.new item_id: product_id, user_id: cur_user_id['id']
              #puts "wishlist_products is #{@wishlist_products}"
              # locals: { wishlist_products:  @wishlist_products}
              # puts wishlist
@@ -60,11 +60,28 @@ class HomeController < ApplicationController
         del_wishlist.destroy
         del_wishlist.save
         redirect_to '/show/wish-list'
-            
-            
-                
-            
+                  
     end
+   def add_wl_item_to_cart
+
+    current_user = session[:current_user_id]
+        puts " current_user is #{ current_user}"
+         if current_user == nil
+             flash[:alert] = "Please Login!"
+             puts "cur_user_id is #{current_user}"
+             redirect_to '/show/wish-list'
+        else 
+
+    item_id = params[:item_id]
+    
+            remove_wl_item=Wishlist.find_by(item_id: item_id)
+            remove_wl_item.destroy
+        @wl_item_to_cart = Cart.create item_id: item_id , user_id: current_user['id']
+        redirect_to '/show/wish-list'
+        flash[:alert] = "Successfully added to cart!"
+        end
+       
+   end
    
    
 end

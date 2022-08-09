@@ -80,13 +80,13 @@ class ItemsController < ApplicationController
         else 
 
              product_id = params[:prod_id]
-             flash[:alert] = "Added to Wishlist!"
+             flash[:alert] = "Added to cart!"
              cur_user_id = session[:current_user_id]
              puts "cur_user_id is #{cur_user_id}"
              # puts "product_id is #{product_id}"
              # prod_id = {:item_id => product_id}
              # puts "Prod_id is #{prod_id}" 
-             @wishlist_products = Wishlist.new(item_id: product_id)
+             @wishlist_products = Wishlist.new item_id: product_id, user_id: cur_user_id['id']
              #puts "wishlist_products is #{@wishlist_products}"
              # locals: { wishlist_products:  @wishlist_products}
              # puts wishlist

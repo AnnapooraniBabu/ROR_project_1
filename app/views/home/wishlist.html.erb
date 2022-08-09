@@ -48,21 +48,28 @@
   <% end %>
 </div> -->
 
+<% if flash.any? %>
+            <% flash.each do |msg, type| %>
+            <div  class="alert-msg">
+              <p><%= type %></p>
+            </div>
+            <% end %>
+            <% end %>
 <div class="wl-container">
   <% @items.each do |wishlist_items| %>
- 
      <div class="wl-item-container">
+      <!-- <h1 style="color: black;"> Annamalai </h1>
+       -->
          <div class="cart-img-container"><a href="/item/<%= wishlist_items['id'] %>"><%= image_tag wishlist_items['img_url'] , alt: 'cart-item', class: 'cart-item-img' %></div></a>
          <div class="wl-bttn">
-           
            <a href=""><%= image_tag 'eye.png' , alt: 'wishlist_btn' , class: 'wl-btn'%></a>
-           <a href="/cart/<%= wishlist_items['id']%>"> <%= image_tag 'cart.png' , alt: 'wishlist_btn' , class: 'wl-btn'%></a>
+           <a href="/wl/<%= wishlist_items['id']%>"> <%= image_tag 'cart.png' , alt: 'wishlist_btn' , class: 'wl-btn'%></a>
          </div>
-     </div>
+    
      <div class="hover-div">
       <a href="wish-list/<%= wishlist_items[:id]%>" data-method="delete"><%= image_tag 'love.png' , alt: 'wishlist-like-img', class: 'wishlist-like-img'%></a>
-      
-  
+    </div>
+
     </div>
      <% end %>
      
