@@ -3,9 +3,9 @@
 ### Project name - Mom's Delish
 
 ### What is Mom's Delish ?
-   <p> Mom's Delish is an e-commerce application where we can buy homemade sweets, snacks, podis, pickles and health mixes which is very affordable. It is made without any chemical ingridents. </p>
+   <p> Mom's Delish is an e-commerce application where we can buy homemade sweets, snacks, podis, pickles and health mixes which is very affordable. It is made without any chemical ingredients. </p>
    
-### Why I choose Mom's Delish ?
+### Why did I choose Mom's Delish ?
    <p>  I choose mom's delish to help my mom because she is good at doing sweets, snacks and all. When I was born and till now she is taking care of me, I didn't do anything back. So I created this web application, which is very helpful for her.</p>
   
 ### Features of Mom's Delish :
