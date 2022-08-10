@@ -13,7 +13,7 @@ Rails.application.routes.draw do
   get 'home', to: 'home#index'
   get 'users/home', to: 'home#index'
   get 'users/login', to: 'sessions#new'
-  delete 'logout', to: 'sessions#destroy'
+  delete '/logout', to: 'sessions#destroy'
   # match 'items/index',:to=>'items#index',:via=>:get
   get '/show/snacks', to: 'items#snacks'
   get '/show/papads&Fryums', to: 'items#papads_fryums'

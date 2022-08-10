@@ -6,9 +6,35 @@
     <input type="text" placeholder="Find your snack" class="search">
     <a href=''> <%= image_tag 'Search.png', alt: 'Search_Icon', class: 'search_img'%></a>
     <div class="heart">
-    <a href=''> <%= image_tag 'User.png', alt: 'Search_Icon', class: 'icons'%></a>
+      <div class="drop-down-container">
+        <a class="ace"  href=''> <%= image_tag 'User.png', alt: 'Search_Icon', class: 'icons', id: 'user' %>
+         <%# <%= user_id = session[:current_user_id] %>
+          <% if session[:current_user_id]  = nil %> 
+          <div id="log" class="drop-down">
+            <ul>
+              <li><a href="/login">Login</a></li>
+                <%# <% else %> 
+                <%# <li><a href="/logout" data-method="delete">Log Out</a></li> %>
+               
+            </ul>
+          </div>
+        </a>
+      </div>
+      <%else%>
+       <div id="log" class="drop-down">
+            <ul>
+              <%# <li><a href="/login">Login</a></li> %>
+               
+                <li><a href="/logout" data-method="delete">Log Out</a></li>
+               
+            </ul>
+          </div>
+        </a>
+      </div>
+        <%end %>  
+      
     <a href='wish-list'> <%= image_tag 'favorite.png', alt: 'Search_Icon', class: 'icons'%></a>
-    <a href=''> <%= image_tag 'cart.png', alt: 'Search_Icon', class: 'icons'%></a>
+    <a href='/cart'> <%= image_tag 'cart.png', alt: 'Search_Icon', class: 'icons'%></a>
   </div>
   </div>
   
