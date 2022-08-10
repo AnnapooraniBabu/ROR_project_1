@@ -55,23 +55,38 @@
             </div>
             <% end %>
             <% end %>
-<div class="wl-container">
-  <% @items.each do |wishlist_items| %>
-     <div class="wl-item-container">
-      <!-- <h1 style="color: black;"> Annamalai </h1>
-       -->
-         <div class="cart-img-container"><a href="/item/<%= wishlist_items['id'] %>"><%= image_tag wishlist_items['img_url'] , alt: 'cart-item', class: 'cart-item-img' %></div></a>
-         <div class="wl-bttn">
-           <a href=""><%= image_tag 'eye.png' , alt: 'wishlist_btn' , class: 'wl-btn'%></a>
-           <a href="/wl/<%= wishlist_items['id']%>"> <%= image_tag 'cart.png' , alt: 'wishlist_btn' , class: 'wl-btn'%></a>
-         </div>
-    
-     <div class="hover-div">
-      <a href="wish-list/<%= wishlist_items[:id]%>" data-method="delete"><%= image_tag 'love.png' , alt: 'wishlist-like-img', class: 'wishlist-like-img'%></a>
-    </div>
 
-    </div>
-     <% end %>
+
+     <div class="wl-container">
+      <% @items.each do |cart_item| %>
+     <div class="wishlist-whole-item-container">
+         <div class="wl-item-container">
+             <div class="wl-img-container"> 
+               <a href="/item/<%= cart_item['id'] %>">
+                 <%= image_tag cart_item['img_url'] , alt: 'cart-item', class: 'wl-item-img'%>
+               </a>
+             </div>
+             <div class="wl-bttn">
+               <a href="wish-list/<%= cart_item['id']%>" data-method="delete">    <%= image_tag 'bin.png' , alt: 'cart-item', class: 'wl-btn-img'%></a>
+               <a href="/wishlist/<%= cart_item['id']%>"> <%= image_tag 'eye.png' , alt: 'eye', class: 'wl-btn-img'%></a>
+               <a href="/cart_page/<%= cart_item['id']%>"> <%= image_tag 'Cart.png' , alt: 'eye', class: 'wl-btn-img'%></a>
+             </div>
+         </div>
+         <div class="item-content">
+           <p class="item-name-ptag">
+             <%= cart_item['item_name'].upcase
+             %> (  <%= cart_item['quantity']
+             %>G  )
+           </p>
+             <p class="item-price-ptag">
+               Rs. <%= cart_item['price'] %>
+             </p>
+         </div>
+       </div>
+       <!-- <div class="hover-div">
+        <a href="wish-list/<%= cart_item[:id]%>" data-method="delete"><%= image_tag 'love.png' , alt: 'wishlist-like-img', class: 'wishlist-like-img'%></a>
+       </div> -->
+         <% end %>
      
     
  </div>

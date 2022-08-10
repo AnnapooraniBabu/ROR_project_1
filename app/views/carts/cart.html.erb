@@ -59,4 +59,11 @@
     
     
 </div>
-          
+         
+<div class="cart-total-amount">
+   <p>Total Products = <%= @total_amount = Cart.all.length %></p>
+  <% @cart_items.each do|item| %>
+  <p></p>
+   
+  <%end%>
+</div>

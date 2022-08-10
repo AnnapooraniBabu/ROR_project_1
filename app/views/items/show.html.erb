@@ -62,7 +62,13 @@
  </div>
 
   -->
-
+  <% if flash.any? %>
+  <% flash.each do |msg, type| %>
+  <div  class="flash-msg">
+    <p><%= type %></p>
+  </div>
+  <% end %>
+  <% end %>
   <div class="item-container">
     <% items.each do |cart_item| %>
    <div class="item-whole-item-container">
