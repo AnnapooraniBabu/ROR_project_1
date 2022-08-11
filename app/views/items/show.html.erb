@@ -97,7 +97,7 @@
   <% end %>
   <% end %>
   <div class="item-container">
-    <% items.each do |cart_item| %>
+    <% @pagy_post.each do |cart_item| %>
    <div class="item-whole-item-container">
        <div class="show-item-container">
            <div class="item-img-container"> 
@@ -127,4 +127,6 @@
        
        
    </div>
+  
+   <div id = "pagination"><%= pagy_nav(@pagy).html_safe %> </div>
              

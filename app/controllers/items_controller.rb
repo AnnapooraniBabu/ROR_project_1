@@ -2,36 +2,49 @@
 
 $cur_item = nil
 class ItemsController < ApplicationController
+  include Pagy::Backend
   skip_before_action :ensure_user_logged_in
-  def show; end
+  
+  def show
+    
+   end
 
   def snacks
     @items = Item.where(category: 'snacks')
+   
+    @pagy, @pagy_post = pagy(@items, items: 6)
     render 'items/show', locals: { items: @items }
+    # erb :'items/show'
+
   end
 
   def papads_fryums
-    @items = Item.select('img_url,item_name, quantity, price').where(category: 'papads&fryums')
+    @items = Item.where(category: 'papads&fryums')
+    @pagy, @pagy_post = pagy(@items, items: 6)
     render 'items/show', locals: { items: @items }
   end
 
   def healthmix
-    @items = Item.select('img_url,item_name, quantity, price').where(category: 'healthmix')
+    @items = Item.where(category: 'healthmix')
+    @pagy, @pagy_post = pagy(@items, items: 6)
     render 'items/show', locals: { items: @items }
   end
 
   def sweets
-    @items = Item.select('img_url,item_name, quantity, price').where(category: 'sweet')
+    @items = Item.where(category: 'sweet')
+    @pagy, @pagy_post = pagy(@items, items: 6)
     render 'items/show', locals: { items: @items }
   end
 
   def jaggerysweets
-    @items = Item.select('img_url,item_name, quantity, price').where(category: 'jaggery')
+    @items = Item.where(category: 'jaggery')
+    @pagy, @pagy_post = pagy(@items, items: 6)
     render 'items/show', locals: { items: @items }
   end
 
   def pickles
-    @items = Item.select('img_url,item_name, quantity, price').where(category: 'pickle')
+    @items = Item.where(category: 'pickle')
+    @pagy, @pagy_post = pagy(@items, items: 6)
     render 'items/show', locals: { items: @items }
   end
 
