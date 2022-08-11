@@ -13,7 +13,7 @@ class SessionsController < ApplicationController
     # puts '---------------------------------------------njsndjn----------'
     # puts (params[:password])
     if user&.authenticate(register_params[:password])
-      session[:current_user_id] = user.id
+      session[:current_user_id] = user
 
       flash.now[:alert] = 'Logged in successfully'
       redirect_to main_path

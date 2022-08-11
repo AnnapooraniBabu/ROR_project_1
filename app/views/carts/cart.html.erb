@@ -8,8 +8,8 @@
     <div class="heart">
       <div class="drop-down-container">
         <a class="ace"  href=''> <%= image_tag 'User.png', alt: 'Search_Icon', class: 'icons', id: 'user' %>
-         <%# <%= user_id = session[:current_user_id] %>
-          <% if session[:current_user_id]  = nil %> 
+       
+         <% if session[:current_user_id]  == nil %> 
           <div id="log" class="drop-down">
             <ul>
               <li><a href="/login">Login</a></li>
@@ -87,9 +87,12 @@
 </div>
          
 <div class="cart-total-amount">
-   <p>Total Products = <%= @total_amount = Cart.all.length %></p>
-  <% @cart_items.each do|item| %>
-  <p></p>
+   <p class='total-products'>Total Products = <%= @total_amount = Cart.all.length %></p>
+   <% first_item_price = 0%>
    
+  <% @cart_items.each do|item| %>
+  <% first_item_price = first_item_price + item.price %>
   <%end%>
+   <p class='total_amount'> Total Amount = Rs. <%= first_item_price  %> </p>
+ <a href=""><p class="buy-now">Buy now</p></a> 
 </div>

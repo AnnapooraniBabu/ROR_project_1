@@ -8,8 +8,8 @@
     <div class="heart">
       <div class="drop-down-container">
         <a class="ace"  href=''> <%= image_tag 'User.png', alt: 'Search_Icon', class: 'icons', id: 'user' %>
-         <!-- <%= user_id = session[:current_user_id] %> -->
-          <% if session[:current_user_id]  = nil %> 
+          
+          <% if session[:current_user_id]  == nil %> 
           <div id="log" class="drop-down">
             <ul>
               <li><a href="/login">Login</a></li>

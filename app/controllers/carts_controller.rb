@@ -8,7 +8,10 @@ class CartsController < ApplicationController
     # end
     @cart_items = Item.joins(:cart).all.map do |cart|
       cart
+      
     end
+   
+    
   end
 
   def create
