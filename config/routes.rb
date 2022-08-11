@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
+  get '/payment', to: 'payments#payment'
   get 'carts/cart'
   root 'home#index'
   get 'main', to: 'home#main', as: :main
@@ -37,4 +38,5 @@ Rails.application.routes.draw do
 
   get '/item/cart_page/:prod_id', to: 'items#add_to_cart'
   get '/wl/:item_id', to: 'home#add_wl_item_to_cart'
+ 
 end

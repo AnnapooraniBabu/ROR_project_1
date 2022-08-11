@@ -89,6 +89,7 @@
  </div>
 
   -->
+  <a href="add"><button class="add-btn">Add Item</button></a>
   <% if flash.any? %>
   <% flash.each do |msg, type| %>
   <div  class="flash-msg">
@@ -96,7 +97,10 @@
   </div>
   <% end %>
   <% end %>
+   
+   
   <div class="item-container">
+   
     <% @pagy_post.each do |cart_item| %>
    <div class="item-whole-item-container">
        <div class="show-item-container">
