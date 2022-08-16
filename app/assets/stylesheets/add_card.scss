@@ -1,0 +1,37 @@
+.whole-div-container{
+    width: 35%;
+    height: 80vh;
+    border: 1px solid black;
+    background-color: white;
+    margin-top: 5%;
+    border-radius: 20px;
+    margin-left: 30%;
+}
+.content-container{
+    width: 90%;
+    height: 40vh;
+    border: 1px solid black;
+    background-color: white;
+    margin-top: 16%;
+    border-radius: 20px;
+    margin-left: 5%;
+}
+.card-detail{
+    position: absolute;
+    font-size: 25px;
+    margin-left: 2%;
+    margin-top: 3%;
+}
+.back-to-cards{
+    position: absolute;
+    font-size: 20px;
+    margin-left: 25%;
+    margin-top: 3.5%;
+}
+.input1{
+    border: 1px solid gray;
+    background-color: whitesmoke;
+    width: 80%;
+    height: 2vh;
+    margin-top: 8%;
+}

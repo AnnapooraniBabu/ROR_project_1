@@ -40,5 +40,7 @@ Rails.application.routes.draw do
   get '/wl/:item_id', to: 'home#add_wl_item_to_cart'
 
   get 'search',to: "home#search"
+  get '/add_card', to: "payments#add_card"
+  post '/card_detail', to: "payments#add_card"
  
 end
