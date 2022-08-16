@@ -38,5 +38,7 @@ Rails.application.routes.draw do
 
   get '/item/cart_page/:prod_id', to: 'items#add_to_cart'
   get '/wl/:item_id', to: 'home#add_wl_item_to_cart'
+
+  get 'search',to: "home#search"
  
 end

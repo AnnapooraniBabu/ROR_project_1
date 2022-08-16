@@ -13,6 +13,10 @@ class SessionsController < ApplicationController
     # puts '---------------------------------------------njsndjn----------'
     # puts (params[:password])
     if user&.authenticate(register_params[:password])
+      p "====================================================="
+      p "====================================================="
+      p "====================================================="
+      p user
       session[:current_user_id] = user
 
       flash.now[:alert] = 'Logged in successfully'
@@ -34,7 +38,7 @@ class SessionsController < ApplicationController
   def destroy
     session[:current_user_id] = nil
     puts "  session[:current_user_id] is #{session[:current_user_id]}"
-    redirect_to root_path
+    redirect_back(fallback_location: root_path)
   end
 
   private

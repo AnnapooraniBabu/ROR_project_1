@@ -13,8 +13,8 @@
             <%= form_with url: '/login' do |form|%>
             <% if flash.any? %>
             <% flash.each do |type, msg| %>
-            <div>
-            <%= msg %>
+            <div >
+           <p class="flash-message" > <%= msg %></p>
             </div>
             <% end %>
             <% end %>

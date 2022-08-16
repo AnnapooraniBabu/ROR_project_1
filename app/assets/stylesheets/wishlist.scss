@@ -1,6 +1,6 @@
 .wl-container{
     width: 90%;
-    height: 80vh;
+    // height: 80vh;
     // background-color: lightgreen;
     margin-left: 5%;
     margin-top: 15%;
@@ -68,6 +68,23 @@
     margin-top: 5%;
     // top: 20%;
     margin-left:15%;
+}
+.wl-empty-content{
+    font-size: 50px;
+    font-weight: 400;
+    margin-top: 10%;
+    margin-left: 30%;
+    position: absolute;
+}
+.wl-connect-content{
+    font-size: 30px;
+    font-weight: 200;
+    margin-top: 15%;
+    margin-left: 35%;
+    position: absolute;
+}
+.saved{
+    position: absolute;
 }
 // .hover-div{
 //     width: 20%;

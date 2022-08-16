@@ -2,8 +2,8 @@
 
 class User < ApplicationRecord
   has_secure_password
-
-  # validates :name , :email, :password, :number, presence: true
+  validates :name , presence: true
+  validates :email, :password_digest, :number, presence: true, uniqueness: true
   # validates :name, length: { minimum: 3, maximum: 15 }
   # validates :email,formate: {with:  /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i  , message: 'Email must be valid', on: :create}
   # validates :password, length: { in: 6..10 }
@@ -18,7 +18,8 @@ class User < ApplicationRecord
   #     :presence => {:message => "Email can't be blank." },
   #     :uniqueness => {:message => "Email already exists."},
   #     :formate => {with:  /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i },
-  #   :length => { :maximum => , :message => "Must be less than 100 characters"}
+  #     :length => { :maximum => , :message => "Must be less than 100 characters"}
+  
 
   # validates :title,
   #       :presence => {:message => "Title can't be blank." },

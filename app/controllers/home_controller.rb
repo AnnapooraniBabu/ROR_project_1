@@ -2,15 +2,29 @@
 
 class HomeController < ApplicationController
   skip_before_action :ensure_user_logged_in
+ 
   def index; end
 
   def main; end
+
+def search
+  @filtered_items = Item.where('category LIKE ? OR item_name LIKE ?', "%#{params[:q]}%", "%#{params[:q]}%")
+  p "==============================================="
+  p "==============================================="
+  p "==============================================="
+  p @filtered_items
+end
 
   def wishlist
     @items = Item.joins(:wishlist).all.map do |wishlist|
       wishlist
     end
-    puts " @items is #{@items}"
+    # puts " @items is #{@items}"
+    # current_user = session[:current_user_id]
+    # @item= Wishlist.where(user_id: current_user['id']).map do |saved|
+    #   saved
+    # end
+    # "@item is #{@item}"
   end
 
   def wishlist_items

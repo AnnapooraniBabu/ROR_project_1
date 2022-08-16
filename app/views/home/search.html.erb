@@ -1,7 +1,4 @@
-<%# <h1>Carts#cart</h1>
-<p>Find me in app/views/carts/cart.html.erb</p> %>
-
- <div class="nav_con">
+<div class="nav_con">
   <div class="nav_subCon">
   <form action='/search'>
     <input type="text" name='q' placeholder="Find your snack" class="search">
@@ -58,27 +55,11 @@
     </div>
     <!-- <%= button_to "Logout", logout_path, method: :delete %> -->
 </div>
-<% current_user = session[:current_user_id] %>
 
-<% if current_user == nil %>
- <div class="wl-container">
- 
- <%# <p class="wl-empty-content">Your Cart is empty!</p> %>
- <p class="wl-connect-content">Please connect with us! <img src="./../../assets/images/" alt="smiley"></p>
- </div>
- 
-<% else%>
-<% if Cart.where(user_id: current_user['id']) == [] %>
-<%# Wishlist.where(user_id: current_user['id']) == []  %>
-<div class="wl-container">
- 
- <p class="wl-empty-content">Your Cart is empty!</p>
- <p class="wl-connect-content">Please connect with us! <img src="./../../assets/images/" alt="smiley"></p>
- </div>
-<%else%>
-<%Cart.where(user_id: current_user['id']).map do |item|%>
-<%# < class= "saved"> item id is <%= item.item_id%>
-<% Item.joins(:cart).where(id:item.item_id).each do |cart_item| %>
+<% unless @filtered_items.length > 0 %>
+    <p class="no-result"> No results found!    </p>
+<% end %>
+<% @filtered_items.each do |cart_item| %>
 
 <div class="cart-container">
  <%# <% @cart_items.each do |cart_item| %>
@@ -109,20 +90,4 @@
     
     
 </div>
-<%end%>
-<%end%>
-
-         
-<div class="cart-total-amount">
-<div class='cls-icon' onclick="this.parentNode.style.display='none'">X</div>
-   <p class='total-products'>Total Products = <%= @total_amount = Cart.all.length %></p>
-   <% first_item_price = 0%>
-   
-  <% @cart_items.each do|items| %>
-  <% first_item_price = first_item_price + items.price %>
-  <%end%>
-   <p class='total_amount'> Total Amount = Rs. <%= first_item_price  %> </p>
- <a href="/payment"><p class="buy-now">Buy now</p></a> 
-</div>
-<%end%>
 <%end%>

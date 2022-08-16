@@ -3,6 +3,7 @@
 
 <div class="nav_con">
   <div class="nav_subCon">
+
     <input type="text" placeholder="Find your snack" class="search">
     <a href=''> <%= image_tag 'Search.png', alt: 'Search_Icon', class: 'search_img'%></a>
     <div class="heart">
@@ -89,8 +90,64 @@
  </div>
 
   -->
-  <a href="add"><button class="add-btn">Add Item</button></a>
-  <% if flash.any? %>
+  
+  <%= current_user = session[:current_user_id] %>
+  <%# <p class="ptag">user is  <%= current_user %>  </p>  
+ <% if current_user %>  
+   <% if current_user['email'] == "adminofmomsdelish@gmail.com" %>
+   <a href="add"><button class="add-btn">Add Item</button></a>
+    <% if flash.any? %>
+  <% flash.each do |msg, type| %>
+  <div  class="flash-msg">
+    <p><%= type %></p>
+  </div>
+  <% end %>
+  <% end %>
+ 
+   
+   
+  <div class="item-container">
+    
+    <% @pagy_post.each do |cart_item| %>
+   <div class="item-whole-item-container">
+   <%# <p><%= current_user%></p> 
+    <%# <p><%= session[:current_user_id]%></p>
+       <div class="show-item-container">
+           <div class="item-img-container"> 
+             <a href="/item/<%= cart_item['id'] %>">
+               <%= image_tag cart_item['img_url'] , alt: 'cart-item', class: 'cart-item-img'%>
+             </a>
+           </div>
+           <div class="item-bttn">
+             <!-- <a href="cart_page/<%= cart_item['id']%>">  <%= image_tag 'bin.png' , alt: 'cart-item', class: 'cart-btn-img'%></a> -->
+             <a href="/wishlist/<%= cart_item['id']%>"> <%= image_tag 'eye.png' , alt: 'eye', class: 'item-btn-img'%></a>
+             <a href="/cart/<%= cart_item['id']%>"> <%= image_tag 'Cart.png' , alt: 'eye', class: 'item-btn-img'%></a>
+            
+           </div>
+       </div>
+       <div class="item-content">
+         <p class="item-name-ptag">
+           <%= cart_item['item_name'].upcase
+           %> (  <%= cart_item['quantity']
+           %>G  )
+         </p>
+           <p class="item-price-ptag">
+             Rs. <%= cart_item['price'] %>
+           </p>
+       </div>
+     </div>
+       <% end %>
+       
+       
+   </div>
+ 
+ 
+   <div id = "pagination"><%= pagy_nav(@pagy).html_safe %> </div>
+    
+   
+   <%else%>
+   
+    <% if flash.any? %>
   <% flash.each do |msg, type| %>
   <div  class="flash-msg">
     <p><%= type %></p>
@@ -100,7 +157,7 @@
    
    
   <div class="item-container">
-   
+    
     <% @pagy_post.each do |cart_item| %>
    <div class="item-whole-item-container">
        <div class="show-item-container">
@@ -131,6 +188,15 @@
        
        
    </div>
-  
+ 
+ 
    <div id = "pagination"><%= pagy_nav(@pagy).html_safe %> </div>
-             
+   <%end %>
+   <%# "adminofmomsdelish@gmail.com" %>
+  
+ 
+ <% end %>
+ 
+ 
+
+  

@@ -1,25 +1,51 @@
-.item_input{
-    width: 10%;
-    height: 5;
-    padding: 0%;
-    margin-bottom: -10%;
-    margin-top: 15%;
+// body{
+//     background-image: url( 'pink-bg.jpg') ;
+//     background-repeat: no-repeat;
+//     background-position:fixed;
+//     background-size: cover;
+// }
+.item_input1{
+    width: 20%;
+    // height: 5;
+    padding:1%;
+    margin-bottom: -5%;
+    margin-top: 9%;
+    margin-left: 5%;
+    border: 1px solid black;
+}
+.item_input2{
+    width: 20%;
+    // height: 5;
+    padding:1%;
+    margin-bottom: -5%;
+    margin-top: 6%;
+    margin-left: 50%;
+    border: 1px solid black;
 }
 .item-div{
     width: 50%;
     height: 60vh;
+    margin-top: 10%;
+    margin-left: 25%;
     // background-color: orchid;
-    background-color: lightblue;
+    // background-color: lightblue;
+    border: 2px solid #de6262;
 }
 .addbtn{
     // display: flex;
     padding: 1%;
     margin: -5%;
     margin-top: 15%;
-    margin-left: 10%;
+    margin-left: 75%;
     font-size: 20px;
     background:fixed;
     border: 10px;
     // border-bottom: 2px solid lightgrey;
     outline:auto; 
 }
+// p{
+//     position: absolute;
+//     font-size: 25px;
+//     font-weight: 400;
+//     margin-left: 2%;
+// }

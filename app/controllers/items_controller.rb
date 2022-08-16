@@ -6,11 +6,19 @@ class ItemsController < ApplicationController
   skip_before_action :ensure_user_logged_in
   
   def show
+  
+  end
+  def search
+    @filtered_items = Item.where('category LIKE ? OR item_name LIKE ?', "%#{params[:q]}%", "%#{params[:q]}%")
+    p "==============================================="
+    p "==============================================="
+    p "==============================================="
+    p @filtered_items
     
-   end
+  end
 
   def snacks
-    @items = Item.where(category: 'snacks')
+    @items = Item.where(category: 'Snacks')
    
     @pagy, @pagy_post = pagy(@items, items: 6)
     render 'items/show', locals: { items: @items }
@@ -53,8 +61,8 @@ class ItemsController < ApplicationController
     if item.save
       session[:current_item_id] = item.id
       # flash[:notice]= "User Created!"
-      render plain: 'Saved'
-      # redirect_to 'show'
+      # render plain: 'Saved'
+      redirect_back(fallback_location: root_path)
     else
       render plain: 'Failed to create account!'
     end
@@ -121,6 +129,6 @@ class ItemsController < ApplicationController
   private
 
   def item_params
-    params.require(:item).permit(:img_url, :item_name, :quantity, :price)
+    params.require(:item).permit(:img_url, :item_name, :quantity, :price, :category)
   end
 end

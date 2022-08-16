@@ -59,3 +59,4 @@ gem 'dotenv-rails', groups: %i[development test production]
 gem 'rubocop', require: false
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 gem 'pagy'
+gem 'jquery-rails'

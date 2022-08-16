@@ -23,9 +23,9 @@ class CartsController < ApplicationController
       redirect_to '/show/snacks'
     else
       product_id = params[:product_id]
-      cart_item_id = Cart.new(item_id: product_id)
+      cart_item_id = Cart.new item_id: product_id, user_id: current_user['id']
       if cart_item_id.save
-        # render plain: true
+        # render plasin: true
         flash[:alert] = 'Successfully added to cart!'
         redirect_to '/show/snacks'
       else

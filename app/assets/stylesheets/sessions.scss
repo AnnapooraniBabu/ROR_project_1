@@ -93,13 +93,21 @@ input{
     // text-align: center;
     position: absolute;
     }
-.flash_msg{
-    position: absolute;
-    left: 10%;
-    top:5%;
-    background-color: black;
-    width: 10%;
-    height: 5vh;
-    color: red;
-    margin-left: 10%;
+// .flash_msg{
+//     position: absolute;
+//     left: 10%;
+//     top:5%;
+//     background-color: black;
+//     width: 10%;
+//     height: 5vh;
+//     color: red;
+//     margin-left: 10%;
+// }
+.flash-message{
+   position: absolute;
+   font-size: 20px;
+   color: red;
+   margin-top:  10%;
+   margin-left: 5%;
+
 }

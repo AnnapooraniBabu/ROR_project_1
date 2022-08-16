@@ -6,12 +6,20 @@ class UsersController < ApplicationController
 
   def create
     user = User.new(register_params)
+    p "====================================="
+    p "====================================="
+    p "====================================="
+    p user
     if user.save
-      session[:current_user_id] = user.id
-      flash[:notice] = 'User Created!'
-      redirect_to root_path
+      session[:current_user_id] = user
+     
+      redirect_to '/main'
+      # flash[:notice] = 'User Created!'
     else
-      render plain: 'Failed to create account!'
+      flash[:notice] = 'User already exists!'
+      redirect_back(fallback_location: root_path)
+     
+      # render plain: 'Failed to create account!'
     end
   end
 
