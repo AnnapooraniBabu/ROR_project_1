@@ -46,5 +46,6 @@ Rails.application.routes.draw do
   post '/card_detail', to: "payments#create_card"
   get '/payment', to: "payments#payment"
   get 'address', to: "payments#address"
- 
+  get 'items/item/cart_page/:product_id', to: "items#cart_single_item"  , as: :items_id
+  get 'items/:product_id', to: "items#cart_single_item"  
 end

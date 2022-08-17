@@ -1,37 +1,64 @@
 <% display_item = $cur_item %>
 <!-- <% random_item = $random_item%> -->
 
-
-
 <div class="nav_con">
-    <div class="nav_subCon">
-      <input type="text" placeholder="Find your snack" class="search">
-      <a href=''> <%= image_tag 'Search.png', alt: 'Search_Icon', class: 'search_img'%></a>
-      <div class="heart">
-      <a href=''> <%= image_tag 'User.png', alt: 'Search_Icon', class: 'icons'%></a>
-      <a href='/wish-list'> <%= image_tag 'favorite.png', alt: 'Search_Icon', class: 'icons'%></a>
-      <a href='/cart'> <%= image_tag 'cart.png', alt: 'Search_Icon', class: 'icons'%></a>
-    </div>
-    </div>
-    
-    <div class="nav_div">
-      <ul>
-        <li><a href="/show/pickles">Pickles</a></li>
-          
-        <li><a href="/show/papads&Fryums">Papads & Fryums</a></li>
-        
-        <li><a href="/show/healthmix">Health Mix</a></li>
-        
-        <li><a href="/show/sweets">Sweets</a></li>
-        
-        <li><a href="/show/snacks">Snacks</a></li>
-        
-        <li><a href="/show/jaggerysweets">Jaggery Sweets</a></li>
-      
-      </ul>
+  <div class="nav_subCon">
+  <form action='/search'>
+    <input type="text" name='q' placeholder="Find your snack" class="search">
+    <%= image_tag 'Search.png', alt: 'Search_Icon', class: 'search_img'%>
+  </form>
+    <div class="heart">
+      <div class="drop-down-container">
+        <a class="ace"  href=''> <%= image_tag 'User.png', alt: 'Search_Icon', class: 'icons', id: 'user' %>
+       
+         <% if session[:current_user_id]  == nil %> 
+          <div id="log" class="drop-down">
+            <ul>
+              <li><a href="/login">Login</a></li>
+                <%# <% else %> 
+                <%# <li><a href="/logout" data-method="delete">Log Out</a></li> %>
+               
+            </ul>
+          </div>
+        </a>
       </div>
-      <!-- <%= button_to "Logout", logout_path, method: :delete %> -->
+      <%else%>
+       <div id="log" class="drop-down">
+            <ul>
+              <%# <li><a href="/login">Login</a></li> %>
+               
+                <li><a href="/logout" data-method="delete">Log Out</a></li>
+               
+            </ul>
+          </div>
+        </a>
+      </div>
+        <%end %>  
+      
+    <a href='wish-list'> <%= image_tag 'favorite.png', alt: 'Search_Icon', class: 'icons'%></a>
+    <a href='/cart'> <%= image_tag 'cart.png', alt: 'Search_Icon', class: 'icons'%></a>
   </div>
+  </div>
+  
+  <div class="nav_div">
+    <ul>
+      <li><a href="/show/pickles">Pickles</a></li>
+        
+      <li><a href="/show/papads&Fryums">Papads & Fryums</a></li>
+      
+      <li><a href="/show/healthmix">Health Mix</a></li>
+      
+      <li><a href="/show/sweets">Sweets</a></li>
+      
+      <li><a href="/show/snacks">Snacks</a></li>
+      
+      <li><a href="/show/jaggerysweets">Jaggery Sweets</a></li>
+    
+    </ul>
+    </div>
+    <!-- <%= button_to "Logout", logout_path, method: :delete %> -->
+</div>
+
  <% if flash.any? %>
                   <% flash.each do |msg, type| %>
                   <div  class="alert-msg">

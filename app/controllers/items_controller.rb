@@ -8,6 +8,13 @@ class ItemsController < ApplicationController
   def show
   
   end
+  def cart_single_item
+    item_id = params[:product_id]
+    $cur_item = Item.find(item_id)
+    render 'items/item'
+    flash[:notice]= "Successfully added to Cart!"
+
+  end
   def search
     @filtered_items = Item.where('category LIKE ? OR item_name LIKE ?', "%#{params[:q]}%", "%#{params[:q]}%")
     p "==============================================="
@@ -71,6 +78,7 @@ class ItemsController < ApplicationController
   def show_selected_item
     item_id = params[:item_id]
     $cur_item = Item.find(item_id)
+     flash[:notice]= "User Created!"
     render 'items/item'
 
     random_items
