@@ -1,9 +1,15 @@
 <div class="whole-payment-container">
     <div class="payment-nav">
-        <p>Card Details</p>
+        <p>Payment Method</p>
         <a href="/add_card">
         <div class="new-card">
             <p>+ Add new card</p></div></a>
+            <%current_user = session[:current_user_id]%>
+            <%CardDetail.where(user_id: current_user['id']).each do |card|%>
+            <div class="card">
+                <p><%= card.card_holder_name%></p>
+            </div>
+            <%end%>
         <div class="upi-payment">
             <p>UPI Payment</p>
            <ul>

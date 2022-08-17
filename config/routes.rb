@@ -31,6 +31,7 @@ Rails.application.routes.draw do
   get '/show/wish-list', to: 'home#wishlist'
   get '/cart', to: 'carts#cart'
   get '/cart', to: 'carts#show_cart_items'
+  get 'item/item/cart_page/:product_id', to: 'carts#create'
   get 'cart_page/:cart_item_id', to: 'carts#delete_item'
   delete '/show/wish-list/:wishlist_product_id', to: 'home#delete_wishlist_item'
   delete '/wish-list/:wishlist_product_id', to: 'home#delete_wishlist_item'
@@ -41,6 +42,9 @@ Rails.application.routes.draw do
 
   get 'search',to: "home#search"
   get '/add_card', to: "payments#add_card"
-  post '/card_detail', to: "payments#add_card"
+
+  post '/card_detail', to: "payments#create_card"
+  get '/payment', to: "payments#payment"
+  get 'address', to: "payments#address"
  
 end

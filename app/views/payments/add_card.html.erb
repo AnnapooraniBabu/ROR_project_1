@@ -1,13 +1,13 @@
 <div class="whole-div-container">
     <p class="card-detail">Card Details</p>
-    <p class="back-to-cards"> <a href="/payments">< Back to cards</a></p>
+    <p class="back-to-cards"> <a href="/payment">< Back to cards</a></p>
 <div class="content-container">
-    <%= form_with(url: "/add_card", method: "POST") do |form|%>
+    <%= form_with( url: "/card_detail", method: "POST") do |form|%>
     <%= form.text_field "card[card_holder_name]", id:"name",placeholder: "Card Holder Name",class: "input1", :required => true  %>
     <%= form.number_field "card[card_no]", id: "url", placeholder: "card Number",class: "input1" ,:required => true  %>
-    <%= form.number_field "card[card_year]", id: "url", placeholder: "Card year",class: "item_input1" ,:required => true  %>
-    <%= form.number_field "card[card_cvv_no]", id: "quantity", placeholder: "CVV",class: "item_input2" ,:required => true  %>
-   <%= form.submit "Add", class:"addbtn", style: "text-align: center; " %>
+    <%= form.number_field "card[card_year]", id: "url", placeholder: "Card year",class: "input2" ,:required => true  %>
+    <%= form.number_field "card[card_cvv_no]", id: "quantity", placeholder: "CVV",class: "input3" ,:required => true  %>
+   <%= form.submit "Add Card", class:"addbtn", style: "text-align: center; " %>
  <% end %>
 </div>
 </div>

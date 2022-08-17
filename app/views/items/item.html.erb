@@ -32,7 +32,13 @@
       </div>
       <!-- <%= button_to "Logout", logout_path, method: :delete %> -->
   </div>
-
+ <% if flash.any? %>
+                  <% flash.each do |msg, type| %>
+                  <div  class="alert-msg">
+                    <p><%= type %></p>
+                  </div>
+                  <% end %>
+                  <% end %>
   <div class="con-container">
     <img src="<%= display_item['img_url'] %>" class="item-img" alt="">
     <p class="item-name"><%= display_item['item_name']%></p>
@@ -40,8 +46,8 @@
     <p class="price">Rs. <%= display_item['price']%> </p>
     <input type="number" class="quantity" placeholder="Quantity" value="1">
     <br><br><br><br>
-   <a href="cart_page/<%= display_item['id']%>"> <input type="button" value="Add cart" class="add-Btn"></a>
-    <a href=""><%= image_tag 'wishlist.png' , alt: 'wishlist' , class: 'wishlist-img' %></a>
+   <a href="item/cart_page/<%= display_item['id']%>"> <input type="button" value="Add cart" class="add-Btn"></a>
+    <a href="/wishlist/<%= display_item['id']%>"><%= image_tag 'wishlist.png' , alt: 'wishlist' , class: 'wishlist-img' %></a>
     
   </div>
   <div class="suggestion">
@@ -52,8 +58,8 @@
      <img src="<%= display_item['img_url'] %>" class="suggest-item-img" alt=""> 
     </div>
     <div class="bottom-btn">
-        <a href=""> <%= image_tag 'eye.png' , alt: 'eye', class: 'eye-btn'%></a>
-        <a href=""> <%= image_tag 'Cart.png' , alt: 'cart', class: 'eye-btn'%></a>
+        <a href="/wishlist/<%= display_item['id']%>"> <%= image_tag 'eye.png' , alt: 'eye', class: 'eye-btn'%></a>
+        <a href="/item/cart_page/<%= display_item['id']%>"> <%= image_tag 'Cart.png' , alt: 'cart', class: 'eye-btn'%></a>
     </div>
   
   </div>

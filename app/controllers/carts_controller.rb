@@ -27,7 +27,8 @@ class CartsController < ApplicationController
       if cart_item_id.save
         # render plasin: true
         flash[:alert] = 'Successfully added to cart!'
-        redirect_to '/show/snacks'
+        # redirect_to '/show/snacks'
+        redirect_back(fallback_location: root_path)
       else
         render plain: false
       end

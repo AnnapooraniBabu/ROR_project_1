@@ -70,10 +70,12 @@
             <%= image_tag cart_item['img_url'] , alt: 'cart-item', class: 'cart-item-img'%>
           </a>
         </div>
-        <div class="cart-bttn">
-          <a href="cart_page/<%= cart_item['id']%>">  <%= image_tag 'bin.png' , alt: 'cart-item', class: 'cart-btn-img'%></a>
-        
-        </div>
+        <div class="item-bttn">
+             <!-- <a href="cart_page/<%= cart_item['id']%>">  <%= image_tag 'bin.png' , alt: 'cart-item', class: 'cart-btn-img'%></a> -->
+             <a href="/wishlist/<%= cart_item['id']%>"> <%= image_tag 'eye.png' , alt: 'eye', class: 'item-btn-img'%></a>
+             <a href="/cart/<%= cart_item['id']%>"> <%= image_tag 'Cart.png' , alt: 'eye', class: 'item-btn-img'%></a>
+            
+           </div>
     </div>
     <div class="item-content">
       <p class="item-name-ptag">
