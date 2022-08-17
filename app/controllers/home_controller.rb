@@ -3,10 +3,12 @@
 class HomeController < ApplicationController
   skip_before_action :ensure_user_logged_in
  
-  def index; end
+  def index 
+  end
 
-  def main; end
-
+  def main 
+   end
+ 
 def search
   @filtered_items = Item.where('category LIKE ? OR item_name LIKE ?', "%#{params[:q]}%", "%#{params[:q]}%")
   p "==============================================="

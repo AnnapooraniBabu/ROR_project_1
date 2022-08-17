@@ -271,3 +271,21 @@ display: block;
     position: absolute;
 
 }
+.alert-msg{
+    width: 20%;
+    height: 6vh;
+    background-color: white;
+    position: absolute;
+    // margin-top: 20%;
+    margin-left: 40%;
+    text-align: center;
+    font-size: 25px;
+    color: white;
+    // top: 5%;
+    
+}
+.alert-msg p{
+    color: #ec7b7b ;
+    // margin-bottom:-5%;
+    margin-top: 3%;
+}

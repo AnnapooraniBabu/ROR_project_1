@@ -1,0 +1,66 @@
+<% display_item = $cur_item %>
+<!-- <% random_item = $random_item%> -->
+
+
+
+<div class="nav_con">
+    <div class="nav_subCon">
+      <input type="text" placeholder="Find your snack" class="search">
+      <a href=''> <%= image_tag 'Search.png', alt: 'Search_Icon', class: 'search_img'%></a>
+      <div class="heart">
+      <a href=''> <%= image_tag 'User.png', alt: 'Search_Icon', class: 'icons'%></a>
+      <a href='/wish-list'> <%= image_tag 'favorite.png', alt: 'Search_Icon', class: 'icons'%></a>
+      <a href='/cart'> <%= image_tag 'cart.png', alt: 'Search_Icon', class: 'icons'%></a>
+    </div>
+    </div>
+    
+    <div class="nav_div">
+      <ul>
+        <li><a href="/show/pickles">Pickles</a></li>
+          
+        <li><a href="/show/papads&Fryums">Papads & Fryums</a></li>
+        
+        <li><a href="/show/healthmix">Health Mix</a></li>
+        
+        <li><a href="/show/sweets">Sweets</a></li>
+        
+        <li><a href="/show/snacks">Snacks</a></li>
+        
+        <li><a href="/show/jaggerysweets">Jaggery Sweets</a></li>
+      
+      </ul>
+      </div>
+      <!-- <%= button_to "Logout", logout_path, method: :delete %> -->
+  </div>
+ <% if flash.any? %>
+                  <% flash.each do |msg, type| %>
+                  <div  class="alert-msg">
+                    <p><%= type %></p>
+                  </div>
+                  <% end %>
+                  <% end %>
+  <div class="con-container">
+    <img src="<%= display_item['img_url'] %>" class="item-img" alt="">
+    <p class="item-name"><%= display_item['item_name']%></p>
+    <p class="gram">Grams : <%= display_item['quantity']%>g</p>
+    <p class="price">Rs. <%= display_item['price']%> </p>
+    <input type="number" class="quantity" placeholder="Quantity" value="1">
+    
+  
+  </div>
+  <div class="suggestion">
+    <p class="suggestion-p">Suggestions</p>
+    <p class="tag-line">Best Selling products</p>
+    <div class="suggest-img-container">
+    <%= image_tag 'bestseller.png', alt: 'bestseller' , class: 'bestseller-img'%>
+     <img src="<%= display_item['img_url'] %>" class="suggest-item-img" alt=""> 
+    </div>
+    <div class="bottom-btn">
+        <a href="/wishlist/<%= display_item['id']%>"> <%= image_tag 'eye.png' , alt: 'eye', class: 'eye-btn'%></a>
+        <a href="/item/cart_page/<%= display_item['id']%>"> <%= image_tag 'Cart.png' , alt: 'cart', class: 'eye-btn'%></a>
+    </div>
+  
+  </div>
+  
+
+ 

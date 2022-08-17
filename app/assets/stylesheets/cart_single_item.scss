@@ -1,0 +1,116 @@
+.con-container{
+    width: 70%;
+    height: 70vh;
+    // background-color: orange;
+    margin-top: 15%;
+    margin-left: 15%;
+}
+.item-img{
+    width: 40%;
+    margin-top: 5%;
+    margin-left: 5%;
+    // display: block;
+}
+.item-name{
+    font-size: 35px;
+    font-weight: 700;
+    // display: inline;
+    margin-top: -38%;
+    margin-left: 50%;
+}
+.gram{
+    font-size: 24px;
+    font-weight: 400;
+    // display: inline;
+    margin-top: 3%;
+    margin-left: 50%;  
+}
+.price{
+    margin-top: 3%;
+    font-size: 24px;
+    font-weight: 400;
+    margin-left: 50%;   
+}
+.quantity{
+    margin-left: 50%;  
+    padding: 1%;
+    width: 8%;
+    border: 1px solid black;
+    text-align: center;
+    // display:flex;
+    margin-top: 4%;
+    display: block;
+    // background-color: palegreen;
+}
+// .add-Btn{
+//     width: 10%;
+//     padding: 1%;
+//     border: 1px solid black;
+//     text-align: center;
+//     justify-content: center;
+//     display: inline-flex;
+
+//     margin-top: 1%;
+    
+//     margin-left: 50%;
+  
+// }
+.wishlist-img{
+width: 4.6%;
+margin-top:-3.2%;   
+margin-left: 62%;
+}
+.suggestion{
+    width: 80%;
+    height: 70vh;
+    // background-color: lightgreen;
+    margin-left: 10%;
+    border: 1px solid black;
+}
+.suggestion-p{
+    font-size: 40px;
+    font-weight: 600;
+    margin-left: 5%;
+    // display: inline-flex;
+}
+.suggest-img-container{
+    width: 20%;
+    height: 38vh;
+    // background-color: black;
+    margin-left: 4%;
+    margin-top: 3%;
+    display: inline-flex;
+}
+.suggest-item-img{
+    width: 100%;
+    height: 30vh;
+    // position: absolute;
+}
+.bestseller-img{
+    width: 5%;
+    height: 7%;
+    position: absolute;
+}
+.tag-line{
+    font-size: 25px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    margin-left: 5%;
+    margin-top: -1%;
+}
+.bottom-btn{
+    width: 16%;
+    height: 8vh;
+    background-color: #F47C7C;
+    position: absolute;
+    margin-top: -4.1%;
+    margin-left: 3.2%;
+}
+.eye-btn{
+    // position: absolute;
+    width: 15%;
+    margin-left: 20%;
+    margin-top: 5%;
+    display: inline-flexbox;
+}
+

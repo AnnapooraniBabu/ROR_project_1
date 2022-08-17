@@ -31,6 +31,7 @@
         </a>
       </div>
         <%end %>  
+
       
     <a href='wish-list'> <%= image_tag 'favorite.png', alt: 'Search_Icon', class: 'icons'%></a>
     <a href='/cart'> <%= image_tag 'cart.png', alt: 'Search_Icon', class: 'icons'%></a>
@@ -53,8 +54,15 @@
     
     </ul>
     </div>
-    <!-- <%= button_to "Logout", logout_path, method: :delete %> -->
+     <% if flash.any? %>
+                  <% flash.each do |msg, type| %>
+                  <div  class="alert-msg">
+                    <p><%= type %></p>
+                  </div>
+                  <% end %>
+                  <% end %>
 </div>
+
 <div class="img_con">
   <a href='/show/snacks'> <%= image_tag 'Sweet.png', alt: 'Search_Icon', class: 'main_img_1'%></a>
   <a href='/show/papads&Fryums'> <%= image_tag 'pappads.jpg', alt: 'Search_Icon', class: 'main_img_2'%></a>
@@ -75,7 +83,7 @@
   </div>
 </div>
 <% current_user = session[:current_user_id] %>
-<p class="ptag">user is  <%= current_user %>  </p> 
+<%# <p class="ptag">user is  <%= current_user %>  </p> 
 <!-- <div class="hm_podis">
   <p>HOMEMADE PODIS</p>
   <div class="podi_div">
