@@ -228,12 +228,14 @@ footer img{
     padding-left: 10%;
     width: 18%;
 }
-.mom{
+.moms_logo{
     margin-left: 45%;
     // margin-top: 3%;
-width: -5%;
+     // width: -5%;
+    width: 35%;
+    // margin-left: 10%;
     // height: 70vh;
-    // position: absolute;
+    position: absolute;
 }
 .user{
     position: absolute;
@@ -253,4 +255,9 @@ width: -5%;
     position: absolute;
     width: 8%;
     margin-top: -3%;
+}
+.no-result{
+    margin-top: 20%;
+    font-size: 30px;
+    margin-left: 40%;
 }

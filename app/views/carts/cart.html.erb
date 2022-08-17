@@ -1,14 +1,42 @@
 <%# <h1>Carts#cart</h1>
 <p>Find me in app/views/carts/cart.html.erb</p> %>
 
-  <div class="nav_con">
+ <div class="nav_con">
   <div class="nav_subCon">
-    <input type="text" placeholder="Find your snack" class="search">
-    <a href=''> <%= image_tag 'Search.png', alt: 'Search_Icon', class: 'search_img'%></a>
+  <form action='/search'>
+    <input type="text" name='q' placeholder="Find your snack" class="search">
+    <%= image_tag 'Search.png', alt: 'Search_Icon', class: 'search_img'%>
+  </form>
     <div class="heart">
-    <a href=''> <%= image_tag 'User.png', alt: 'Search_Icon', class: 'icons'%></a>
+      <div class="drop-down-container">
+        <a class="ace"  href=''> <%= image_tag 'User.png', alt: 'Search_Icon', class: 'icons', id: 'user' %>
+       
+         <% if session[:current_user_id]  == nil %> 
+          <div id="log" class="drop-down">
+            <ul>
+              <li><a href="/login">Login</a></li>
+                <%# <% else %> 
+                <%# <li><a href="/logout" data-method="delete">Log Out</a></li> %>
+               
+            </ul>
+          </div>
+        </a>
+      </div>
+      <%else%>
+       <div id="log" class="drop-down">
+            <ul>
+              <%# <li><a href="/login">Login</a></li> %>
+               
+                <li><a href="/logout" data-method="delete">Log Out</a></li>
+               
+            </ul>
+          </div>
+        </a>
+      </div>
+        <%end %>  
+      
     <a href='wish-list'> <%= image_tag 'favorite.png', alt: 'Search_Icon', class: 'icons'%></a>
-    <a href=''> <%= image_tag 'cart.png', alt: 'Search_Icon', class: 'icons'%></a>
+    <a href='/cart'> <%= image_tag 'cart.png', alt: 'Search_Icon', class: 'icons'%></a>
   </div>
   </div>
   
@@ -30,8 +58,30 @@
     </div>
     <!-- <%= button_to "Logout", logout_path, method: :delete %> -->
 </div>
+<% current_user = session[:current_user_id] %>
+
+<% if current_user == nil %>
+ <div class="wl-container">
+ 
+ <%# <p class="wl-empty-content">Your Cart is empty!</p> %>
+ <p class="wl-connect-content">Please connect with us! <img src="./../../assets/images/" alt="smiley"></p>
+ </div>
+ 
+<% else%>
+<% if Cart.where(user_id: current_user['id']) == [] %>
+<%# Wishlist.where(user_id: current_user['id']) == []  %>
+<div class="wl-container">
+ 
+ <p class="wl-empty-content">Your Cart is empty!</p>
+ <p class="wl-connect-content">Please connect with us! <img src="./../../assets/images/" alt="smiley"></p>
+ </div>
+<%else%>
+<%Cart.where(user_id: current_user['id']).map do |item|%>
+<%# < class= "saved"> item id is <%= item.item_id%>
+<% Item.joins(:cart).where(id:item.item_id).each do |cart_item| %>
+
 <div class="cart-container">
- <% @cart_items.each do |cart_item| %>
+ <%# <% @cart_items.each do |cart_item| %>
 <div class="cart-whole-item-container">
     <div class="cart-item-container">
         <div class="cart-img-container"> 
@@ -55,8 +105,24 @@
         </p>
     </div>
   </div>
-    <% end %>
+    <%# <% end %>
     
     
 </div>
-          
+<%end%>
+<%end%>
+
+         
+<div class="cart-total-amount">
+<div class='cls-icon' onclick="this.parentNode.style.display='none'">X</div>
+   <p class='total-products'>Total Products = <%= @total_amount = Cart.all.length %></p>
+   <% first_item_price = 0%>
+   
+  <% @cart_items.each do|items| %>
+  <% first_item_price = first_item_price + items.price %>
+  <%end%>
+   <p class='total_amount'> Total Amount = Rs. <%= first_item_price  %> </p>
+ <a href="/payment"><p class="buy-now">Buy now</p></a> 
+</div>
+<%end%>
+<%end%>

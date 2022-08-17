@@ -1,33 +1,62 @@
 <% wl_products = $wishlist_products %>
 <div class="nav_con">
   <div class="nav_subCon">
-    <input type="text" placeholder="Find your snack" class="search">
-    <a href=''> <%= image_tag 'Search.png', alt: 'Search_Icon', class: 'search_img'%></a>
+  <form action='/search'>
+    <input type="text" name='q' placeholder="Find your snack" class="search">
+    <%= image_tag 'Search.png', alt: 'Search_Icon', class: 'search_img'%>
+  </form>
     <div class="heart">
-    <a href=''> <%= image_tag 'User.png', alt: 'Search_Icon', class: 'icons'%></a>
-    <a href=''> <%= image_tag 'favorite.png', alt: 'Search_Icon', class: 'icons'%></a>
+      <div class="drop-down-container">
+        <a class="ace"  href=''> <%= image_tag 'User.png', alt: 'Search_Icon', class: 'icons', id: 'user' %>
+       
+         <% if session[:current_user_id]  == nil %> 
+          <div id="log" class="drop-down">
+            <ul>
+              <li><a href="/login">Login</a></li>
+                <%# <% else %> 
+                <%# <li><a href="/logout" data-method="delete">Log Out</a></li> %>
+               
+            </ul>
+          </div>
+        </a>
+      </div>
+      <%else%>
+       <div id="log" class="drop-down">
+            <ul>
+              <%# <li><a href="/login">Login</a></li> %>
+               
+                <li><a href="/logout" data-method="delete">Log Out</a></li>
+               
+            </ul>
+          </div>
+        </a>
+      </div>
+        <%end %>  
+      
+    <a href='wish-list'> <%= image_tag 'favorite.png', alt: 'Search_Icon', class: 'icons'%></a>
     <a href='/cart'> <%= image_tag 'cart.png', alt: 'Search_Icon', class: 'icons'%></a>
   </div>
   </div>
   
   <div class="nav_div">
     <ul>
-        <li><a href="/show/pickles">Pickles</a></li>
+      <li><a href="/show/pickles">Pickles</a></li>
         
-        <li><a href="/show/papads&Fryums">Papads & Fryums</a></li>
-        
-        <li><a href="/show/healthmix">Health Mix</a></li>
-        
-        <li><a href="/show/sweets">Sweets</a></li>
-        
-        <li><a href="/show/snacks">Snacks</a></li>
-        
-        <li><a href="/show/jaggerysweets">Jaggery Sweets</a></li>
+      <li><a href="/show/papads&Fryums">Papads & Fryums</a></li>
+      
+      <li><a href="/show/healthmix">Health Mix</a></li>
+      
+      <li><a href="/show/sweets">Sweets</a></li>
+      
+      <li><a href="/show/snacks">Snacks</a></li>
+      
+      <li><a href="/show/jaggerysweets">Jaggery Sweets</a></li>
     
     </ul>
     </div>
     <!-- <%= button_to "Logout", logout_path, method: :delete %> -->
 </div>
+
 
 <!-- <div class="wishlist-container">
   <% @items.each do|wishlist_items|%>
@@ -48,30 +77,72 @@
   <% end %>
 </div> -->
 
-<% if flash.any? %>
-            <% flash.each do |msg, type| %>
-            <div  class="alert-msg">
-              <p><%= type %></p>
-            </div>
-            <% end %>
-            <% end %>
-<div class="wl-container">
-  <% @items.each do |wishlist_items| %>
-     <div class="wl-item-container">
-      <!-- <h1 style="color: black;"> Annamalai </h1>
-       -->
-         <div class="cart-img-container"><a href="/item/<%= wishlist_items['id'] %>"><%= image_tag wishlist_items['img_url'] , alt: 'cart-item', class: 'cart-item-img' %></div></a>
-         <div class="wl-bttn">
-           <a href=""><%= image_tag 'eye.png' , alt: 'wishlist_btn' , class: 'wl-btn'%></a>
-           <a href="/wl/<%= wishlist_items['id']%>"> <%= image_tag 'cart.png' , alt: 'wishlist_btn' , class: 'wl-btn'%></a>
-         </div>
-    
-     <div class="hover-div">
-      <a href="wish-list/<%= wishlist_items[:id]%>" data-method="delete"><%= image_tag 'love.png' , alt: 'wishlist-like-img', class: 'wishlist-like-img'%></a>
-    </div>
+<% current_user = session[:current_user_id] %>
 
-    </div>
-     <% end %>
+<% if session[:current_user_id] == nil %>
+ <div class="wl-container">
+ 
+ <%# <p class="wl-empty-content">Your wishlist is empty!</p> %>
+ <p class="wl-connect-content">Please connect with us! <img src="./../../assets/images/" alt="smiley"></p>
+ </div>
+
+<% else %>
+       <%if Wishlist.where(user_id: current_user['id']) == []  %>
+      <div class="wl-container">
+      
+      <p class="wl-empty-content">Your wishlist is empty!</p>
+      <p class="wl-connect-content">Please connect with us! <img src="./../../assets/images/" alt="smiley"></p>
+      </div>
+         <%else %> 
+      <% Wishlist.where(user_id: current_user['id']).map do |item|%>
+      <% wl_items = Item.joins(:wishlist).where(id:item.item_id).map do |cart_item| %>
+      <%# <p class="wl-empty-content"> <%  current_user %></p>
+      <% if flash.any? %>
+                  <% flash.each do |msg, type| %>
+                  <div  class="alert-msg">
+                    <p><%= type %></p>
+                  </div>
+                  <% end %>
+                  <% end %>
+
+
+     <div class="wl-container">
+      <%# <% @items.each do |cart_item| %> 
+     <div class="wishlist-whole-item-container">
+         <div class="wl-item-container">
+             <div class="wl-img-container"> 
+               <a href="/item/<%= cart_item['id'] %>">
+                 <%= image_tag cart_item['img_url'] , alt: 'cart-item', class: 'wl-item-img'%>
+               </a>
+             </div>
+             <div class="wl-bttn">
+               <a href="wish-list/<%= cart_item['id']%>" data-method="delete">    <%= image_tag 'bin.png' , alt: 'cart-item', class: 'wl-btn-img'%></a>
+               <a href="/wishlist/<%= cart_item['id']%>"> <%= image_tag 'eye.png' , alt: 'eye', class: 'wl-btn-img'%></a>
+               <a href="/cart_page/<%= cart_item['id']%>"> <%= image_tag 'Cart.png' , alt: 'eye', class: 'wl-btn-img'%></a>
+             </div>
+         </div>
+
+         <div class="item-content">
+           <p class="item-name-ptag">
+             <%= cart_item['item_name'].upcase
+             %> (  <%= cart_item['quantity'] %> G  )
+           </p>
+             <p class="item-price-ptag">
+               Rs. <%= cart_item['price'] %>
+             </p>
+         </div>
+         
+       </div>
      
+         <%# <% end  %>
+    
     
  </div>
+
+     <%end%>
+    <%end%>
+     <%end %>
+ 
+
+ 
+ <%end%>

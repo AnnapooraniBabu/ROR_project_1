@@ -1,0 +1,93 @@
+<div class="nav_con">
+  <div class="nav_subCon">
+  <form action='/search'>
+    <input type="text" name='q' placeholder="Find your snack" class="search">
+    <%= image_tag 'Search.png', alt: 'Search_Icon', class: 'search_img'%>
+  </form>
+    <div class="heart">
+      <div class="drop-down-container">
+        <a class="ace"  href=''> <%= image_tag 'User.png', alt: 'Search_Icon', class: 'icons', id: 'user' %>
+       
+         <% if session[:current_user_id]  == nil %> 
+          <div id="log" class="drop-down">
+            <ul>
+              <li><a href="/login">Login</a></li>
+                <%# <% else %> 
+                <%# <li><a href="/logout" data-method="delete">Log Out</a></li> %>
+               
+            </ul>
+          </div>
+        </a>
+      </div>
+      <%else%>
+       <div id="log" class="drop-down">
+            <ul>
+              <%# <li><a href="/login">Login</a></li> %>
+               
+                <li><a href="/logout" data-method="delete">Log Out</a></li>
+               
+            </ul>
+          </div>
+        </a>
+      </div>
+        <%end %>  
+      
+    <a href='wish-list'> <%= image_tag 'favorite.png', alt: 'Search_Icon', class: 'icons'%></a>
+    <a href='/cart'> <%= image_tag 'cart.png', alt: 'Search_Icon', class: 'icons'%></a>
+  </div>
+  </div>
+  
+  <div class="nav_div">
+    <ul>
+      <li><a href="/show/pickles">Pickles</a></li>
+        
+      <li><a href="/show/papads&Fryums">Papads & Fryums</a></li>
+      
+      <li><a href="/show/healthmix">Health Mix</a></li>
+      
+      <li><a href="/show/sweets">Sweets</a></li>
+      
+      <li><a href="/show/snacks">Snacks</a></li>
+      
+      <li><a href="/show/jaggerysweets">Jaggery Sweets</a></li>
+    
+    </ul>
+    </div>
+    <!-- <%= button_to "Logout", logout_path, method: :delete %> -->
+</div>
+
+<% unless @filtered_items.length > 0 %>
+    <p class="no-result"> No results found!    </p>
+<% end %>
+<% @filtered_items.each do |cart_item| %>
+
+<div class="cart-container">
+ <%# <% @cart_items.each do |cart_item| %>
+<div class="cart-whole-item-container">
+    <div class="cart-item-container">
+        <div class="cart-img-container"> 
+          <a href="/item/<%= cart_item['id'] %>">
+            <%= image_tag cart_item['img_url'] , alt: 'cart-item', class: 'cart-item-img'%>
+          </a>
+        </div>
+        <div class="cart-bttn">
+          <a href="cart_page/<%= cart_item['id']%>">  <%= image_tag 'bin.png' , alt: 'cart-item', class: 'cart-btn-img'%></a>
+        
+        </div>
+    </div>
+    <div class="item-content">
+      <p class="item-name-ptag">
+        <%= cart_item['item_name'].upcase
+        %> (  <%= cart_item['quantity']
+        %>G  )
+      </p>
+        <p class="item-price-ptag">
+          Rs. <%= cart_item['price'] %>
+        </p>
+    </div>
+  </div>
+    <%# <% end %>
+    
+    
+</div>
+<%end%>

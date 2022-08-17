@@ -3,13 +3,41 @@
 
 <div class="nav_con">
   <div class="nav_subCon">
+
     <input type="text" placeholder="Find your snack" class="search">
     <a href=''> <%= image_tag 'Search.png', alt: 'Search_Icon', class: 'search_img'%></a>
     <div class="heart">
-    <a href=''> <%= image_tag 'User.png', alt: 'Search_Icon', class: 'icons'%></a>
+      <div class="drop-down-container">
+        <a class="ace"  href=''> <%= image_tag 'User.png', alt: 'Search_Icon', class: 'icons', id: 'user' %>
+          
+          <% if session[:current_user_id]  == nil %> 
+          <div id="log" class="drop-down">
+            <ul>
+              <li><a href="/login">Login</a></li>
+                <%# <% else %> 
+                <%# <li><a href="/logout" data-method="delete">Log Out</a></li> %>
+               
+            </ul>
+          </div>
+        </a>
+      </div>
+      <%else%>
+       <div id="log" class="drop-down">
+            <ul>
+              <%# <li><a href="/login">Login</a></li> %>
+               
+                <li><a href="/logout" data-method="delete">Log Out</a></li>
+               
+            </ul>
+          </div>
+        </a>
+      </div>
+        <%end %>  
+      
     <a href='wish-list'> <%= image_tag 'favorite.png', alt: 'Search_Icon', class: 'icons'%></a>
     <a href='/cart'> <%= image_tag 'cart.png', alt: 'Search_Icon', class: 'icons'%></a>
   </div>
+  
   </div>
   
   <div class="nav_div">
@@ -31,12 +59,10 @@
     <!-- <%= button_to "Logout", logout_path, method: :delete %> -->
 </div>
 
-<div class="item-container">
+<!-- <div class="item-container">
 
   <a href="add"><button class="add-btn">Add Item</button></a>
-  <!-- <% if flash[:notice] %>
-  <div class="flash-msg"><%= flash[:notice] %></div>
-<% end %> -->
+  
 <% if flash.any? %>
             <% flash.each do |msg, type| %>
             <div  class="flash-msg">
@@ -46,14 +72,12 @@
             <% end %>
  <% items.each do |product| %>
    <div class="img_div1">
-    <!-- <a href=""> <%= image_tag 'like.png' , alt: 'wishlist-img1', class: 'save-item'%></a> -->
-     <div class="img_div"> 
+    <div class="img_div"> 
        <a href="/item/<%= product['id'] %>"><%= image_tag product.img_url , alt: 'img' %>  </a>
      </div>
     
       <div class="div_con">
-        <!-- <h1><%=product.quantity%></h1> -->
-        <!-- <a href="/wishlist/<%= product['id']%>"> <%= image_tag 'eye.png' , alt: 'eye', class: 'eye-img'%></a> -->
+       
         <a href="/wishlist/<%= product['id']%>"> <%= image_tag 'eye.png' , alt: 'eye', class: 'eye-img'%></a>
         <a href="/cart/<%= product['id']%>"> <%= image_tag 'Cart.png' , alt: 'eye', class: 'cart-img'%></a>
        
@@ -64,3 +88,115 @@
   <% end %> 
 
  </div>
+
+  -->
+  
+  <%= current_user = session[:current_user_id] %>
+  <%# <p class="ptag">user is  <%= current_user %>  </p>  
+ <% if current_user %>  
+   <% if current_user['email'] == "adminofmomsdelish@gmail.com" %>
+   <a href="add"><button class="add-btn">Add Item</button></a>
+    <% if flash.any? %>
+  <% flash.each do |msg, type| %>
+  <div  class="flash-msg">
+    <p><%= type %></p>
+  </div>
+  <% end %>
+  <% end %>
+ 
+   
+   
+  <div class="item-container">
+    
+    <% @pagy_post.each do |cart_item| %>
+   <div class="item-whole-item-container">
+   <%# <p><%= current_user%></p> 
+    <%# <p><%= session[:current_user_id]%></p>
+       <div class="show-item-container">
+           <div class="item-img-container"> 
+             <a href="/item/<%= cart_item['id'] %>">
+               <%= image_tag cart_item['img_url'] , alt: 'cart-item', class: 'cart-item-img'%>
+             </a>
+           </div>
+           <div class="item-bttn">
+             <!-- <a href="cart_page/<%= cart_item['id']%>">  <%= image_tag 'bin.png' , alt: 'cart-item', class: 'cart-btn-img'%></a> -->
+             <a href="/wishlist/<%= cart_item['id']%>"> <%= image_tag 'eye.png' , alt: 'eye', class: 'item-btn-img'%></a>
+             <a href="/cart/<%= cart_item['id']%>"> <%= image_tag 'Cart.png' , alt: 'eye', class: 'item-btn-img'%></a>
+            
+           </div>
+       </div>
+       <div class="item-content">
+         <p class="item-name-ptag">
+           <%= cart_item['item_name'].upcase
+           %> (  <%= cart_item['quantity']
+           %>G  )
+         </p>
+           <p class="item-price-ptag">
+             Rs. <%= cart_item['price'] %>
+           </p>
+       </div>
+     </div>
+       <% end %>
+       
+       
+   </div>
+ 
+ 
+   <div id = "pagination"><%= pagy_nav(@pagy).html_safe %> </div>
+    
+   
+   <%else%>
+   
+    <% if flash.any? %>
+  <% flash.each do |msg, type| %>
+  <div  class="flash-msg">
+    <p><%= type %></p>
+  </div>
+  <% end %>
+  <% end %>
+   
+   
+  <div class="item-container">
+    
+    <% @pagy_post.each do |cart_item| %>
+   <div class="item-whole-item-container">
+       <div class="show-item-container">
+           <div class="item-img-container"> 
+             <a href="/item/<%= cart_item['id'] %>">
+               <%= image_tag cart_item['img_url'] , alt: 'cart-item', class: 'cart-item-img'%>
+             </a>
+           </div>
+           <div class="item-bttn">
+             <!-- <a href="cart_page/<%= cart_item['id']%>">  <%= image_tag 'bin.png' , alt: 'cart-item', class: 'cart-btn-img'%></a> -->
+             <a href="/wishlist/<%= cart_item['id']%>"> <%= image_tag 'eye.png' , alt: 'eye', class: 'item-btn-img'%></a>
+             <a href="/cart/<%= cart_item['id']%>"> <%= image_tag 'Cart.png' , alt: 'eye', class: 'item-btn-img'%></a>
+            
+           </div>
+       </div>
+       <div class="item-content">
+         <p class="item-name-ptag">
+           <%= cart_item['item_name'].upcase
+           %> (  <%= cart_item['quantity']
+           %>G  )
+         </p>
+           <p class="item-price-ptag">
+             Rs. <%= cart_item['price'] %>
+           </p>
+       </div>
+     </div>
+       <% end %>
+       
+       
+   </div>
+ 
+ 
+   <div id = "pagination"><%= pagy_nav(@pagy).html_safe %> </div>
+   <%end %>
+   <%# "adminofmomsdelish@gmail.com" %>
+  
+ 
+ <% end %>
+ 
+ 
+
+  
