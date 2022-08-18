@@ -94,20 +94,21 @@
       <p class="wl-connect-content">Please connect with us! <img src="./../../assets/images/" alt="smiley"></p>
       </div>
          <%else %> 
-      <% Wishlist.where(user_id: current_user['id']).map do |item|%>
-      <% wl_items = Item.joins(:wishlist).where(id:item.item_id).map do |cart_item| %>
+      
       <%# <p class="wl-empty-content"> <%  current_user %></p>
       <% if flash.any? %>
                   <% flash.each do |msg, type| %>
                   <div  class="alert-msg">
-                    <p><%= type %></p>
+                    <p><%= msg %></p>
                   </div>
                   <% end %>
                   <% end %>
 
 
      <div class="wl-container">
-      <%# <% @items.each do |cart_item| %> 
+       
+      <% Wishlist.where(user_id: current_user['id']).map do |item|%>
+      <% wl_items = Item.joins(:wishlist).where(id:item.item_id).map do |cart_item| %>
      <div class="wishlist-whole-item-container">
          <div class="wl-item-container">
              <div class="wl-img-container"> 
@@ -134,15 +135,15 @@
          
        </div>
      
-         <%# <% end  %>
-    
-    
+        
+       <%end%> 
+       <%end%>
+       <%end%>  
+       <%end%>
  </div>
 
-     <%end%>
-    <%end%>
-     <%end %>
- 
+
 
  
- <%end%>
+
+

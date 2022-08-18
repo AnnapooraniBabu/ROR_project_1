@@ -31,39 +31,40 @@ end
 
   def wishlist_items
     current_user = session[:current_user_id]
-    puts " current_user is #{current_user}"
+    product_id = params[:wishlist_product_id]
+    # puts " current_user is #{current_user}"
     if current_user.nil?
       flash[:alert] = 'Please Login!'
       puts "cur_user_id is #{current_user}"
-      redirect_to '/show/snacks'
+      # redirect_to '/show/snacks'
+      redirect_back(fallback_location: root_path)
     else
-
-      product_id = params[:product_id]
-      flash[:alert] = 'Added to Wishlist!'
+     
       cur_user_id = session[:current_user_id]
-      puts "cur_user_id is #{cur_user_id}"
-      # puts "product_id is #{product_id}"
-      # prod_id = {:item_id => product_id}
-      # puts "Prod_id is #{prod_id}"
-      @wishlist_products = Wishlist.new item_id: product_id, user_id: cur_user_id['id']
-      # puts "wishlist_products is #{@wishlist_products}"
-      # locals: { wishlist_products:  @wishlist_products}
-      # puts wishlist
-      # p "================================================="
-      # p "================================================="
-      # p "================================================="
-      wishlist_id = Wishlist
-      if @wishlist_products.id == product_id
-        render plain: 'Failed'
-      # redirect_to wishlist
-      else
-        puts " @wishlist_products.id is #{wishlist_id}"
-        @wishlist_products.save
-        redirect_to '/show/snacks'
-
-      end
-    end
-  end
+      find_prod_id = Wishlist.find_by(item_id: product_id)
+      puts "Hhhhhhhhhhhhhhhhhhhhhhhhhhh"
+      puts "product_id is #{product_id}"
+      puts "find_prod_id is #{find_prod_id}"
+      # puts find_prod_id.inspect
+        if find_prod_id
+          flash[:alert] = 'Already product exists!'
+           redirect_back(fallback_location: root_path)
+        else
+          @wishlist_products = Wishlist.create item_id: product_id, user_id: cur_user_id['id']
+          flash[:alert] = 'Added to Wishlist!'
+          puts "+++++++++++++++"
+          puts "+++++++++++++++"
+          puts "+++++++++++++++"
+          puts "product_id is #{product_id}"
+          # puts "find_prod_id is #{find_prod_id['item_id']}"
+          # puts product_id != find_prod_id['item_id']
+          # flash[:alert] = 'Added to wishlist!'
+         
+          redirect_back(fallback_location: root_path) 
+         
+        end
+        end
+        end
 
   def delete_wishlist_item
     cur_user_id = session[:current_user_id]
@@ -72,7 +73,8 @@ end
     del_wishlist = Wishlist.find_by(item_id: del_id)
     del_wishlist.destroy
     del_wishlist.save
-    redirect_to '/show/wish-list'
+    # redirect_to '/show/wish-list'
+    redirect_back(fallback_location: root_path)
   end
 
   def add_wl_item_to_cart
@@ -81,7 +83,8 @@ end
     if current_user.nil?
       flash[:alert] = 'Please Login!'
       puts "cur_user_id is #{current_user}"
-      redirect_to '/show/wish-list'
+      # redirect_to '/show/wish-list'
+      redirect_back(fallback_location: root_path)
     else
 
       item_id = params[:item_id]
@@ -89,8 +92,9 @@ end
       remove_wl_item = Wishlist.find_by(item_id: item_id)
       remove_wl_item.destroy
       @wl_item_to_cart = Cart.create item_id: item_id, user_id: current_user['id']
-      redirect_to '/show/wish-list'
+      # redirect_to '/show/wish-list'
       flash[:alert] = 'Successfully added to cart!'
+      redirect_back(fallback_location: root_path)
     end
   end
 end

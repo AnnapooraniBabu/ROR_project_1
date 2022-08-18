@@ -78,8 +78,8 @@
 <%else%>
 <%Cart.where(user_id: current_user['id']).map do |item|%>
 <%# < class= "saved"> item id is <%= item.item_id%>
-<% Item.joins(:cart).where(id:item.item_id).each do |cart_item| %>
-
+<% Item.joins(:cart).where(id:item['item_id']).each do |cart_item| %>
+ 
 <div class="cart-container">
  <%# <% @cart_items.each do |cart_item| %>
 <div class="cart-whole-item-container">
@@ -103,9 +103,13 @@
         <p class="item-price-ptag">
           Rs. <%= cart_item['price'] %>
         </p>
+        
     </div>
+    
   </div>
     <%# <% end %>
+    
+  
     
     
 </div>
@@ -124,5 +128,5 @@
    <p class='total_amount'> Total Amount = Rs. <%= first_item_price  %> </p>
  <a href="/payment"><p class="buy-now">Buy now</p></a> 
 </div>
-<%end%>
+ <%end%>
 <%end%>

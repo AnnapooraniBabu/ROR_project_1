@@ -20,7 +20,7 @@ class CartsController < ApplicationController
     if current_user.nil?
       flash[:alert] = 'Please Login!'
       puts "cur_user_id is #{current_user}"
-      redirect_to '/show/snacks'
+      redirect_back(fallback_location: root_path)
     else
       product_id = params[:product_id]
       cart_item_id = Cart.new item_id: product_id, user_id: current_user['id']
