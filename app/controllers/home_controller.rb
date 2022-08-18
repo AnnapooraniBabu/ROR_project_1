@@ -9,6 +9,9 @@ class HomeController < ApplicationController
   def main 
    end
  
+   def user_profile
+     
+   end
 def search
   @filtered_items = Item.where('category LIKE ? OR item_name LIKE ?', "%#{params[:q]}%", "%#{params[:q]}%")
   p "==============================================="
@@ -50,7 +53,8 @@ end
           flash[:alert] = 'Already product exists!'
            redirect_back(fallback_location: root_path)
         else
-          @wishlist_products = Wishlist.create item_id: product_id, user_id: cur_user_id['id']
+          
+          @wishlist_products = Wishlist.create item_id: product_id, user_id: cur_user_id['id'] 
           flash[:alert] = 'Added to Wishlist!'
           puts "+++++++++++++++"
           puts "+++++++++++++++"

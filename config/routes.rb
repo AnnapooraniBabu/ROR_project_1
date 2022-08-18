@@ -47,5 +47,6 @@ Rails.application.routes.draw do
   get '/payment', to: "payments#payment"
   get 'address', to: "payments#address"
   get 'items/item/cart_page/:prodt_id', to: "items#cart_single_item"  , as: :items_id
-  # get 'items/:product_id', to: "items#cart_single_item"  
+  get 'items/:prodt_id', to: "items#cart_single_item" 
+  get 'user_profile', to: 'home#user_profile' 
 end

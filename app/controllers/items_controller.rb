@@ -9,8 +9,8 @@ class ItemsController < ApplicationController
   
   end
   def cart_single_item
-    item_id = params[:prodt_id]
-    $cur_item = Item.find(item_id)
+    item = params[:prodt_id]
+    $cur_item = Item.find_by(item)
     render 'items/item'
     flash[:notice]= "Successfully added to cart!"
 
