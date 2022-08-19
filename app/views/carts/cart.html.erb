@@ -64,7 +64,7 @@
  <div class="wl-container">
  
  <%# <p class="wl-empty-content">Your Cart is empty!</p> %>
- <p class="wl-connect-content">Please connect with us! </p><%= image_tag 'smiley.png'%>
+ <p class="wl-connect-content">Please connect with us! </p><%= image_tag 'smiley.png', alt: 'smiley', class: 'smiley-emoji1'%>
  </div>
  
 <% else%>
@@ -73,7 +73,7 @@
 <div class="wl-container">
  
  <p class="wl-empty-content">Your Cart is empty!</p>
- <p class="wl-connect-content">Please add some sweets to your Cart<br> That makes you happy! </p><%= image_tag 'smiley.png'%>
+ <p class="wl-connect-content">Please add some products to your Cart! </p><%= image_tag 'smiley.png' , alt: 'smiley', class: 'smiley-emoji1'%>
  </div>
 <%else%>
   <%@total_price =0%>

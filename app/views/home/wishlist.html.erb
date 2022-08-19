@@ -83,7 +83,7 @@
  <div class="wl-container">
  
  <%# <p class="wl-empty-content">Your wishlist is empty!</p> %>
- <p class="wl-connect-content">Please connect with us! </p><%= image_tag 'smiley.png'%>
+ <p class="wl-connect-content">Please connect with us! </p><%= image_tag 'smiley.png', alt: 'smiley', class: 'smiley-emoji'%>
  </div>
 
 <% else %>
@@ -91,7 +91,7 @@
       <div class="wl-container">
       
       <p class="wl-empty-content">Your wishlist is empty!</p>
-      <p class="wl-connect-content">Please connect with us! </p><%= image_tag 'smiley.png'%>
+      <p class="wl-connect-content">Please add some products to your wishlist! </p><%= image_tag 'smiley.png' , alt: 'smiley', class: 'smiley-emoji'%>
       </div>
          <%else %> 
       
