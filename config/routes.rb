@@ -26,11 +26,11 @@ Rails.application.routes.draw do
 
   get '/show/add', to: 'items#add'
   post 'items', to: 'items#create'
-  get '/wishlist/:product_id', to: 'home#wishlist_items'
+  get '/wishlist/:wishlist_product_id', to: 'home#wishlist_items'
   get '/wish-list', to: 'home#wishlist'
   get '/show/wish-list', to: 'home#wishlist'
   get '/cart', to: 'carts#cart'
-  get '/cart', to: 'carts#show_cart_items'
+  # get '/cart', to: 'carts#show_cart_items'
   get 'item/item/cart_page/:product_id', to: 'carts#create'
   get 'cart_page/:cart_item_id', to: 'carts#delete_item'
   delete '/show/wish-list/:wishlist_product_id', to: 'home#delete_wishlist_item'
@@ -46,6 +46,7 @@ Rails.application.routes.draw do
   post '/card_detail', to: "payments#create_card"
   get '/payment', to: "payments#payment"
   get 'address', to: "payments#address"
-  get 'items/item/cart_page/:product_id', to: "items#cart_single_item"  , as: :items_id
-  get 'items/:product_id', to: "items#cart_single_item"  
+  get 'items/item/cart_page/:prodt_id', to: "items#cart_single_item"  , as: :items_id
+  get 'items/:prodt_id', to: "items#cart_single_item" 
+  get 'user_profile', to: 'home#user_profile' 
 end

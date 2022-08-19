@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_08_16_173304) do
+ActiveRecord::Schema.define(version: 2022_08_18_063953) do
 
   create_table "card_details", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "card_holder_name"
@@ -27,6 +27,7 @@ ActiveRecord::Schema.define(version: 2022_08_16_173304) do
     t.datetime "updated_at", precision: 6, null: false
     t.bigint "item_id", null: false
     t.bigint "user_id"
+    t.integer "item_quantity"
     t.index ["item_id"], name: "index_carts_on_item_id"
   end
 

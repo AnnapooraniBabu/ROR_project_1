@@ -9,10 +9,10 @@ class ItemsController < ApplicationController
   
   end
   def cart_single_item
-    item_id = params[:product_id]
-    $cur_item = Item.find(item_id)
+    item = params[:prodt_id]
+    $cur_item = Item.find_by(item)
     render 'items/item'
-    flash[:notice]= "Successfully added to Cart!"
+    flash[:notice]= "Successfully added to cart!"
 
   end
   def search
@@ -26,7 +26,6 @@ class ItemsController < ApplicationController
 
   def snacks
     @items = Item.where(category: 'Snacks')
-   
     @pagy, @pagy_post = pagy(@items, items: 6)
     render 'items/show', locals: { items: @items }
     # erb :'items/show'
@@ -78,7 +77,7 @@ class ItemsController < ApplicationController
   def show_selected_item
     item_id = params[:item_id]
     $cur_item = Item.find(item_id)
-     flash[:notice]= "User Created!"
+    #  flash[:notice]= "User Created!"
     render 'items/item'
 
     random_items

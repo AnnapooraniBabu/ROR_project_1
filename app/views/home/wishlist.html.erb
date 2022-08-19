@@ -83,7 +83,7 @@
  <div class="wl-container">
  
  <%# <p class="wl-empty-content">Your wishlist is empty!</p> %>
- <p class="wl-connect-content">Please connect with us! <img src="./../../assets/images/" alt="smiley"></p>
+ <p class="wl-connect-content">Please connect with us! </p><%= image_tag 'smiley.png'%>
  </div>
 
 <% else %>
@@ -91,11 +91,10 @@
       <div class="wl-container">
       
       <p class="wl-empty-content">Your wishlist is empty!</p>
-      <p class="wl-connect-content">Please connect with us! <img src="./../../assets/images/" alt="smiley"></p>
+      <p class="wl-connect-content">Please connect with us! </p><%= image_tag 'smiley.png'%>
       </div>
          <%else %> 
-      <% Wishlist.where(user_id: current_user['id']).map do |item|%>
-      <% wl_items = Item.joins(:wishlist).where(id:item.item_id).map do |cart_item| %>
+      
       <%# <p class="wl-empty-content"> <%  current_user %></p>
       <% if flash.any? %>
                   <% flash.each do |msg, type| %>
@@ -107,7 +106,9 @@
 
 
      <div class="wl-container">
-      <%# <% @items.each do |cart_item| %> 
+       
+      <% Wishlist.where(user_id: current_user['id']).map do |item|%>
+      <% wl_items = Item.joins(:wishlist).where(id:item.item_id).map do |cart_item| %>
      <div class="wishlist-whole-item-container">
          <div class="wl-item-container">
              <div class="wl-img-container"> 
@@ -118,7 +119,7 @@
              <div class="wl-bttn">
                <a href="wish-list/<%= cart_item['id']%>" data-method="delete">    <%= image_tag 'bin.png' , alt: 'cart-item', class: 'wl-btn-img'%></a>
                <a href="/wishlist/<%= cart_item['id']%>"> <%= image_tag 'eye.png' , alt: 'eye', class: 'wl-btn-img'%></a>
-               <a href="/cart_page/<%= cart_item['id']%>"> <%= image_tag 'Cart.png' , alt: 'eye', class: 'wl-btn-img'%></a>
+               <a href="/wl/<%= cart_item['id']%>"> <%= image_tag 'Cart.png' , alt: 'eye', class: 'wl-btn-img'%></a>
              </div>
          </div>
 
@@ -134,15 +135,15 @@
          
        </div>
      
-         <%# <% end  %>
-    
-    
+        
+       <%end%> 
+       <%end%>
+       <%end%>  
+       <%end%>
  </div>
 
-     <%end%>
-    <%end%>
-     <%end %>
- 
+
 
  
- <%end%>
+
+
