@@ -23,5 +23,5 @@
   11. Categories  -        Completed
   12. Payment     -        Yet to start
      
-## Heroku link - https://moms-delish.herokuapp.com
-## Porfolio link - https://portfolio-annapoorani.netlify.app/ 
+### Heroku link - https://moms-delish.herokuapp.com
+### Porfolio link - https://portfolio-annapoorani.netlify.app/ 
