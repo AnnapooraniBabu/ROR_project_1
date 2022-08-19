@@ -77,6 +77,7 @@
  </div>
 <%else%>
   <%@total_price =0%>
+   <%@cart_total_products=0%>
 <%Cart.where(user_id: current_user['id']).map do |item|%>
 <%# < class= "saved"> item id is <%= item.item_id%>
 <% Item.joins(:cart).where(id: item['item_id']).each do |cart_item| %>
@@ -105,6 +106,7 @@
         <p class="item-price-ptag">
           Rs. <%= cart_item['price'] %>
         </p>
+   <% @cart_total_products = @cart_total_products+item['item_quantity']%> 
         <%@pro_price = cart_item['price'] * item['item_quantity']%>
         <%@total_price = @total_price + @pro_price%>
     </div>
@@ -125,7 +127,7 @@
   
     
   <div>
-  <%@cart_total_products=0%>
+ 
 
    <%# <%cart_item_id.item_quantity%> 
    <% @cart_items.each do|items|   %>
@@ -139,7 +141,6 @@
   
    <% @quantity = cart_item_id.item_quantity%>
    
-   <% @cart_total_products = @cart_total_products+@quantity%> 
 
   <% p @cart_total_products%>
   <%@product_total_price = @quantity_price * @quantity %>
