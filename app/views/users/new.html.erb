@@ -29,9 +29,9 @@
             <% end %>
             <%= form_with(url: "/users", method: "POST") do |form|%>
 			  <%= form.text_field "user[name]", id:"name",placeholder: "FullName",class: "input_user", :required => true , :maxlength => 15, :title => 'The name can contain maximum 15 characters' %>
-              <%= form.email_field "user[email]", id: "email", placeholder: "Email address",class: "input_user" ,:required => true , :pattern => '\A[A-Z0-9+_.-]+@[A-Z0-9.-]+\Z' , :maxlength => 30, :title => '' %>
+              <%= form.email_field "user[email]", id: "email", placeholder: "Email address",class: "input_user" ,:required => true , :pattern => '\A[A-Z0-9+_.-]+@[A-Z0-9.-]+\Z' , :maxlength => 30, :title => 'The email can contain both alphabets eg:mike@gmail.com' %>
               <%= form.telephone_field "user[number]", id: "number", placeholder: "Phone Number",class: "input_user" ,:required => true, :maxlength => 10   %>
-              <%= form.password_field "user[password]", id: "password", placeholder: "Password",class: "input_user" ,:required => true , :maxlength => 10 %>
+              <%= form.password_field "user[password]", id: "password", placeholder: "Password",class: "input_user" ,:required => true , :maxlength => 10, :pattern => '/^[([a-z]|[A-Z])0-9_-]{6,40}$/' %>
 			  <%= form.submit "Create", class:"loginBtn", style: "text-align: center; " %>
 			<% end %>
         </div>
