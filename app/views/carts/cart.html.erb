@@ -76,6 +76,7 @@
  <p class="wl-connect-content">Please add some sweets to your Cart<br> That makes you happy! </p><%= image_tag 'smiley.png'%>
  </div>
 <%else%>
+  <%@total_price =0%>
 <%Cart.where(user_id: current_user['id']).map do |item|%>
 <%# < class= "saved"> item id is <%= item.item_id%>
 <% Item.joins(:cart).where(id: item['item_id']).each do |cart_item| %>
@@ -100,17 +101,23 @@
         %> (  <%= cart_item['quantity']
         %>G  )
       </p>
+        <p class="product-quantity">Product quantity = <%= item['item_quantity']%></p>
         <p class="item-price-ptag">
           Rs. <%= cart_item['price'] %>
         </p>
-        
+        <%@pro_price = cart_item['price'] * item['item_quantity']%>
+        <%@total_price = @total_price + @pro_price%>
     </div>
     
   </div>
     <%# <% end %>  
 </div>
+<%# <%@price = Item.find(cart_item.id).price%> 
+<%end%> 
 <%end%>
 <%end%>
+
+ 
 
          
 <div class="cart-total-amount">
@@ -118,28 +125,39 @@
   
     
   <div>
-  <%cart_total_products=0%>
-  
-   
-   
+  <%@cart_total_products=0%>
+
    <%# <%cart_item_id.item_quantity%> 
-   
+   <% @cart_items.each do|items|   %>
+   <%@quantity_price = items.price  %>
+   <% p @quantity_price%>
+   <%end%> 
+
+   <%# <%@product_total_price = @quantity_price * @quantity %> 
+  <% p @product_total_price %> 
+   <%  Cart.all.map do |cart_item_id| %> 
   
-   <p class='total-products'>Total Products = <%=cart_total_products%></p>
+   <% @quantity = cart_item_id.item_quantity%>
    
-  <% @cart_items.each do|items| %>
-<%  Cart.all.map do |cart_item_id| %>
-   <%cart_total_products= cart_total_products+cart_item_id.item_quantity%>
-   <%=@cart=cart_item_id.item_quantity%>
-<%# <%= @cart*items.price%> %>
-  <%# <%= @first_item_price = @cart * items.price %> 
-  <%# <%= cart_item_id.item_quantity%> 
-  <%= items.price%> 
+   <% @cart_total_products = @cart_total_products+@quantity%> 
+
+  <% p @cart_total_products%>
+  <%@product_total_price = @quantity_price * @quantity %>
   
- <%end%>
-  <%end%>
-   <p class='total_amount'> Total Amount = Rs. <%= @first_item_price  %> </p>
+  <%@first_p=@product_total_price%>
+  <% p @product_total_price %>
+
+ 
+  
+  
+   <%end%>
+ 
+
+   <p class='total-products'>Total Products = <%=@cart_total_products%></p>
+  <%= @cart%>
+   <p class='total_amount'> Total Amount = Rs. <%= @total_price %> </p>
  <a href="/payment"><p class="buy-now">Buy now</p></a> 
 </div>
- <%end%>
+ <%# <%end%> 
 <%end%>
+ <%# <%end%>  
