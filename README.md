@@ -37,8 +37,8 @@
 
 ## Used Languages :
 
-#### Html
-#### Css
-#### Ruby on rails
-#### Js
+#### 1. Html
+#### 2. Css
+#### 3. Ruby on rails
+#### 4. Js
 
