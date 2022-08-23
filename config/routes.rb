@@ -24,8 +24,8 @@ Rails.application.routes.draw do
   get '/show/pickles', to: 'items#pickles'
   get '/item/:item_id', to: 'items#show_selected_item', as: :item_id
 
-  resources :add
-  # get '/show/add', to: 'items#add'
+  # resources :add
+  get '/show/add', to: 'items#add'
   post '/items', to: 'items#create'
   get '/wishlist/:wishlist_product_id', to: 'home#wishlist_items'
   get '/wish-list', to: 'home#wishlist'
