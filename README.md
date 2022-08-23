@@ -28,4 +28,6 @@
 ### Sonar cloud link - https://sonarcloud.io/project/overview?id=AnnapooraniBabu_ROR_project_1
 ## EER Diagram
 ![moms_delish_eer_diagram](https://user-images.githubusercontent.com/93571073/186054679-454d3c77-0523-421e-be34-238069fbea5e.png)
-
+### Faced Difficulties :
+#### 1. I faced some errors in looping. I found out the solution and solved it.
+#### 2. I faced issues in aligning the products and I solved it with the help of peers.
