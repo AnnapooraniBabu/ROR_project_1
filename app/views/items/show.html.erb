@@ -58,7 +58,7 @@
   <%= current_user = session[:current_user_id] %>
   <%# <p class="ptag">user is  <%= current_user %>  </p>  
  <% if current_user %>  
-     <% if current_user['email'] == "adminofmomsdelish@gmail.com" %>
+     <% if current_user['email'] == "admin@gmail.com" %>
      <a href="add"><button class="add-btn">Add Item</button></a>
      <% end %>
     <% if flash.any? %>
@@ -82,7 +82,7 @@
            </div>
            <div class="item-bttn">
              <!-- <a href="cart_page/<%= cart_item['id']%>">  <%= image_tag 'bin.png' , alt: 'cart-item', class: 'cart-btn-img'%></a> -->
-             <a href="/wishlist/<%= cart_item['id']%>"> <%= image_tag 'eye.png' , alt: 'eye', class: 'item-btn-img'%></a>
+             <a href="/wishlist/<%= cart_item['id']%>"> <%= image_tag 'h.png' , alt: 'eye', class: 'item-btn-img'%></a>
              <a href="/cart/<%= cart_item['id']%>"> <%= image_tag 'Cart.png' , alt: 'eye', class: 'item-btn-img'%></a>
             
            </div>
