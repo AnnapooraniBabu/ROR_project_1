@@ -64,15 +64,23 @@ class ItemsController < ApplicationController
 
   def create
     item = Item.new(item_params)
+    p "-------------"
+    p "-------------"
+    p "-------------"
+p item 
     if item.save
-      session[:current_item_id] = item.id
-      # flash[:notice]= "User Created!"
-      # render plain: 'Saved'
+     
       redirect_back(fallback_location: root_path)
     else
-      render plain: 'Failed to create account!'
+      p "-------------"
+      p "-------------"
+      p "-------------"
+      p item.id
+      render plain: 'Failed to add item!'
     end
+      
   end
+  
 
   def show_selected_item
     item_id = params[:item_id]
