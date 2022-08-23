@@ -67,6 +67,7 @@ class ItemsController < ApplicationController
     p "-------------"
     p "-------------"
     p "-------------"
+    p "???????"
 p item 
     if item.save
      
@@ -75,7 +76,6 @@ p item
       p "-------------"
       p "-------------"
       p "-------------"
-      p item.id
       render plain: 'Failed to add item!'
     end
       
