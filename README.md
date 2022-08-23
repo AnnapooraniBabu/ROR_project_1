@@ -26,3 +26,6 @@
 ### Heroku link - https://moms-delish.herokuapp.com
 ### Portfolio link - https://portfolio-annapoorani.netlify.app/ 
 ### Sonar cloud link - https://sonarcloud.io/project/overview?id=AnnapooraniBabu_ROR_project_1
+## EER Diagram
+![moms_delish_eer_diagram](https://user-images.githubusercontent.com/93571073/186054679-454d3c77-0523-421e-be34-238069fbea5e.png)
+
