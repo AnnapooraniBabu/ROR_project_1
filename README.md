@@ -31,3 +31,14 @@
 ### Faced Difficulties :
 #### 1. I faced some errors in looping. I found out the solution and solved it.
 #### 2. I faced issues in aligning the products and I solved it with the help of peers.
+
+## Used Gem :
+#### Pagy gem  -  For pagination
+
+## Used Languages :
+
+#### Html
+#### Css
+#### Ruby on rails
+#### Js
+
